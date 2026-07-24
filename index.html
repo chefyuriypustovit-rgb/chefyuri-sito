@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chef Yuri — Private Chef | Esperienze gastronomiche private</title>
+<meta name="description" content="Chef Yuri porta la cucina d'autore nella privacy di casa vostra: cene private, chef in villa, cooking class, eventi esclusivi. Un'esperienza, non un servizio." />
+<link rel="canonical" href="https://www.chefyuri.it/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Chef Yuri — Private Chef" />
+<meta property="og:description" content="Cucina d'autore nella privacy di casa vostra. Cene private, chef in villa, cooking class, eventi esclusivi." />
+<meta property="og:locale" content="it_IT" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          cream: '#FAF8F3',
+          ink: '#1C1C1A',
+          forest: '#142118',
+          gold: '#C6A664',
+          'gold-deep': '#8C6B34',
+          line: '#E7E2D5',
+        },
+        fontFamily: {
+          serif: ['Fraunces', 'serif'],
+          sans: ['Inter', 'sans-serif'],
+        },
+        maxWidth: {
+          'content': '1240px',
+        },
+      },
+    },
+  }
+</script>
+<link rel="stylesheet" href="assets/css/main.css">
+
+<!-- SEO: dati strutturati minimi e veritieri. Non aggiungere aggregateRating/review
+     finché non esistono recensioni reali verificabili (vedi CONTENUTI-DA-COMPLETARE.md). -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FoodEstablishment",
+  "name": "Chef Yuri — Private Chef",
+  "description": "Servizio di chef privato per cene private, chef in villa, cooking class ed eventi esclusivi.",
+  "url": "https://www.chefyuri.it/",
+  "areaServed": "IT",
+  "priceRange": "$$$$"
+}
+</script>
+</head>
+
+<body class="bg-cream text-ink antialiased" data-nav="transparent">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:top-4 focus:left-4 focus:bg-ink focus:text-white focus:px-4 focus:py-2 focus:rounded-full focus:text-sm">Salta al contenuto principale</a>
+
+<!-- NAV -->
+<header id="site-nav" class="fixed top-0 inset-x-0 z-50 transition-colors duration-300">
+  <div class="max-w-content mx-auto px-6 md:px-10">
+    <div class="flex items-center justify-between h-20">
+      <a href="#top" class="block ml-16 md:ml-32 transition-[filter] duration-300" id="nav-logo" aria-label="Chef Yuri Pustovit — torna alla home">
+        <img src="assets/img/signature.png" alt="Chef Yuri Pustovit" class="h-14 md:h-[4.25rem] w-auto" />
+      </a>
+
+      <nav class="hidden md:flex items-center gap-9 text-sm" id="nav-links" aria-label="Navigazione principale">
+        <a href="#chi-sono" class="link-underline pb-1">Chi sono</a>
+        <a href="#esperienze" class="link-underline pb-1">Esperienze</a>
+        <a href="#come-funziona" class="link-underline pb-1">Come funziona</a>
+        <a href="#galleria" class="link-underline pb-1">Galleria</a>
+        <a href="#testimonianze" class="link-underline pb-1">Testimonianze</a>
+        <a href="#prenotazione" class="inline-flex items-center rounded-full border px-5 py-2 text-sm transition-colors duration-300" id="nav-cta">Prenota</a>
+      </nav>
+
+      <button id="menu-toggle" class="md:hidden p-2 -mr-2" aria-label="Apri il menu di navigazione" aria-expanded="false" aria-controls="mobile-menu">
+        <svg id="icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg id="icon-close" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Menu mobile -->
+  <div id="mobile-menu" class="hidden md:hidden bg-cream border-t border-line max-h-[calc(100dvh-5rem)] overflow-y-auto">
+    <nav class="flex flex-col px-6 py-6 gap-5 text-base" aria-label="Navigazione mobile">
+      <a href="#chi-sono" class="mobile-link">Chi sono</a>
+      <a href="#esperienze" class="mobile-link">Esperienze</a>
+      <a href="#come-funziona" class="mobile-link">Come funziona</a>
+      <a href="#galleria" class="mobile-link">Galleria</a>
+      <a href="#testimonianze" class="mobile-link">Testimonianze</a>
+      <a href="#instagram" class="mobile-link">Instagram</a>
+      <a href="#prenotazione" class="mobile-link font-medium">Prenota</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- 1. HERO -->
+<section id="top" class="relative h-[100dvh] min-h-[600px] flex items-end">
+  <!-- SOSTITUIBILE: quando il video sarà pronto, sostituire <img> con
+       <video autoplay muted loop playsinline> a piena pagina — non serve
+       modificare il resto della sezione. -->
+  <div id="hero-media" class="absolute inset-0 overflow-hidden">
+    <img src="assets/img/hero.png" alt="Chef Yuri prepara un piatto in una cucina privata" class="absolute inset-0 w-full h-full object-cover object-[22%_center] md:object-center" />
+    <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/25 to-ink/10"></div>
+  </div>
+
+  <div class="relative max-w-content mx-auto w-full px-6 md:px-10 pb-16 md:pb-24 text-white">
+    <p class="eyebrow text-xs md:text-sm text-gold uppercase mb-5 reveal">Private Chef · Esperienza su misura</p>
+    <h1 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] leading-[1.05] max-w-3xl mb-6 reveal">
+      Un'esperienza,<br class="hidden sm:block"> non una cena.
+    </h1>
+    <p class="text-base md:text-lg text-white/85 max-w-xl mb-10 reveal">
+      Chef Yuri porta la cucina d'autore nella privacy di casa vostra — per chi cerca un momento su misura, non un servizio.
+    </p>
+    <div class="reveal">
+      <a href="#prenotazione" class="inline-flex items-center justify-center rounded-full bg-white text-ink px-7 py-3.5 text-sm font-medium border border-white hover:bg-transparent hover:text-white transition-colors duration-300">
+        Racconta la tua occasione
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 2. CHI SONO -->
+<section id="chi-sono" class="max-w-content mx-auto px-6 md:px-10 py-24 md:py-36 scroll-mt-20">
+  <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+    <div class="reveal order-2 md:order-1">
+      <p class="eyebrow text-xs uppercase text-gold-deep mb-4">Chi sono</p>
+      <h2 class="font-display text-3xl md:text-4xl mb-8 leading-tight">Chef Yuri</h2>
+
+      <div class="space-y-5 text-[15px] md:text-base leading-relaxed text-ink/85 max-w-lg">
+        <p>Ho iniziato in cucine dove il tempo si misura in secondi e l'errore non è ammesso. Anni di quel ritmo mi hanno dato tecnica, disciplina, il rispetto per la materia prima. Ma è uscendo da quelle cucine che ho trovato il motivo per cui cucino ancora oggi.</p>
+        <p>Non è lo spettacolo del piatto che mi interessa. È il momento attorno alla tavola: una famiglia che si ritrova, due persone che festeggiano un anniversario in silenzio, un gruppo di amici che non si vedeva da anni. Cucinare in una casa, per un numero ristretto di persone, cambia tutto — il ritmo, l'attenzione, il senso di ciò che viene servito.</p>
+        <p>Lavoro senza un menù fisso perché ogni occasione è diversa. Prima ascolto: chi siete, cosa festeggiate, cosa vi piace davvero mangiare. Poi costruisco un percorso che nasce da quella conversazione, non da un listino.</p>
+        <p>Quello che porto a casa vostra non è un servizio di catering elegante. È lo stesso livello di cura che trovereste in una cucina stellata, restituito nella forma più intima possibile: la vostra tavola.</p>
+      </div>
+
+      <blockquote class="mt-10 border-l-2 border-gold pl-6 font-display text-xl md:text-2xl italic text-ink/90 max-w-lg">
+        "Non cucino per stupire. Cucino per raccontare qualcosa di vero."
+      </blockquote>
+    </div>
+
+    <div class="order-1 md:order-2 reveal">
+      <div class="aspect-[4/5] rounded-sm overflow-hidden">
+        <img src="assets/img/chi-sono.png" alt="Chef Yuri rifinisce un piatto di crudo di pesce" class="w-full h-full object-cover" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. ESPERIENZE -->
+<section id="esperienze" class="bg-white/60 py-24 md:py-36 border-y border-line scroll-mt-20">
+  <div class="max-w-content mx-auto px-6 md:px-10">
+    <div class="max-w-xl mb-16 reveal">
+      <p class="eyebrow text-xs uppercase text-gold-deep mb-4">Esperienze</p>
+      <h2 class="font-display text-3xl md:text-4xl leading-tight mb-5">Sette modi di vivere l'esperienza</h2>
+      <p class="text-ink/70 text-[15px] leading-relaxed">Ogni occasione ha una forma diversa. Scegli quella più vicina alla vostra, o scrivetemi per costruirne una su misura.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <a href="esperienze/cena-privata.html" class="group reveal block">
+        <div class="aspect-[4/3] mb-5 rounded-sm overflow-hidden">
+          <img src="assets/img/esperienza-cena-privata.png" alt="Tavola apparecchiata per una cena privata in villa, sera" class="w-full h-full object-cover" />
+        </div>
+        <h3 class="font-display text-xl mb-1.5 group-hover:text-gold-deep transition-colors duration-300">Cena Privata</h3>
+        <p class="text-sm text-ink/65 leading-relaxed">Una cena su misura, nella privacy di casa vostra.</p>
+      </a>
+
+      <a href="esperienze/chef-in-villa.html" class="group reveal block">
+        <div class="aspect-[4/3] mb-5 rounded-sm overflow-hidden">
+          <img src="assets/img/esperienza-chef-in-villa.webp" alt="Chef privato che cucina in una cucina di villa per un gruppo di ospiti" class="w-full h-full object-cover" />
+        </div>
+        <h3 class="font-display text-xl mb-1.5 group-hover:text-gold-deep transition-colors duration-300">Chef in Villa</h3>
+        <p class="text-sm text-ink/65 leading-relaxed">Il servizio di uno chef privato per l'intero soggiorno.</p>
+      </a>
+
+      <a href="esperienze/cooking-class.html" class="group reveal block">
+        <div class="aspect-[4/3] mb-5 rounded-sm overflow-hidden">
+          <img src="assets/img/esperienza-cooking-class.png" alt="Preparazione di ravioli freschi fatti a mano" class="w-full h-full object-cover" />
+        </div>
+        <h3 class="font-display text-xl mb-1.5 group-hover:text-gold-deep transition-colors duration-300">Cooking Class</h3>
+        <p class="text-sm text-ink/65 leading-relaxed">Un'esperienza conviviale in cucina, non una lezione.</p>
+      </a>
+
+      <a href="esperienze/eventi-aziendali.html" class="group reveal block">
+        <div class="aspect-[4/3] mb-5 rounded-sm overflow-hidden">
+          <img src="assets/img/esperienza-eventi-aziendali.webp" alt="Selezione di finger food e stuzzichini per un evento aziendale" class="w-full h-full object-cover" />
+        </div>
+        <h3 class="font-display text-xl mb-1.5 group-hover:text-gold-deep transition-colors duration-300">Eventi Aziendali</h3>
+        <p class="text-sm text-ink/65 leading-relaxed">Ospitalità d'autore per occasioni professionali ristrette.</p>
+      </a>
+
+      <a href="esperienze/proposta-di-matrimonio.html" class="group reveal block">
+        <div class="aspect-[4/3] mb-5 rounded-sm overflow-hidden">
+          <img src="assets/img/esperienza-proposta-di-matrimonio.webp" alt="Tavola romantica apparecchiata su una terrazza vista lago al tramonto, petali di rosa" class="w-full h-full object-cover" />
+        </div>
+        <h3 class="font-display text-xl mb-1.5 group-hover:text-gold-deep transition-colors duration-300">Proposte di Matrimonio</h3>
+        <p class="text-sm text-ink/65 leading-relaxed">La cornice perfetta per un momento che si ricorda per sempre.</p>
+      </a>
+
+      <a href="esperienze/compleanni.html" class="group reveal block">
+        <div class="aspect-[4/3] mb-5 rounded-sm overflow-hidden">
+          <img src="assets/img/esperienza-compleanni.webp" alt="Amici che brindano insieme a una lunga tavolata imbandita" class="w-full h-full object-cover" />
+        </div>
+        <h3 class="font-display text-xl mb-1.5 group-hover:text-gold-deep transition-colors duration-300">Compleanni</h3>
+        <p class="text-sm text-ink/65 leading-relaxed">Un compleanno raccontato attraverso un percorso su misura.</p>
+      </a>
+
+      <a href="esperienze/anniversari.html" class="group reveal block sm:col-span-2 lg:col-span-1">
+        <div class="aspect-[4/3] mb-5 rounded-sm overflow-hidden">
+          <img src="assets/img/esperienza-anniversari.webp" alt="Una coppia si tiene per mano a una cena romantica a lume di candela" class="w-full h-full object-cover" />
+        </div>
+        <h3 class="font-display text-xl mb-1.5 group-hover:text-gold-deep transition-colors duration-300">Anniversari</h3>
+        <p class="text-sm text-ink/65 leading-relaxed">Il tempo che passa, celebrato a tavola.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 4. COME FUNZIONA -->
+<section id="come-funziona" class="max-w-content mx-auto px-6 md:px-10 py-24 md:py-36 scroll-mt-20">
+  <div class="max-w-xl mb-16 reveal">
+    <p class="eyebrow text-xs uppercase text-gold-deep mb-4">Come funziona</p>
+    <h2 class="font-display text-3xl md:text-4xl leading-tight">Quattro passaggi, nessuna complicazione</h2>
+  </div>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-14">
+    <div class="reveal">
+      <p class="font-display text-4xl text-gold-deep mb-4">01</p>
+      <h3 class="text-base font-medium mb-2">Racconta la tua occasione</h3>
+      <p class="text-sm text-ink/65 leading-relaxed">Scrivimi data, numero di ospiti e il contesto: una cena, un compleanno, un evento.</p>
+    </div>
+    <div class="reveal">
+      <p class="font-display text-4xl text-gold-deep mb-4">02</p>
+      <h3 class="text-base font-medium mb-2">Costruiamo il menù insieme</h3>
+      <p class="text-sm text-ink/65 leading-relaxed">Una conversazione, non un listino: ascolto gusti, allergie e desideri prima di proporre un percorso.</p>
+    </div>
+    <div class="reveal">
+      <p class="font-display text-4xl text-gold-deep mb-4">03</p>
+      <h3 class="text-base font-medium mb-2">Preparo e servo tutto</h3>
+      <p class="text-sm text-ink/65 leading-relaxed">Arrivo con spesa e attrezzatura. Cucino nella vostra cucina, servo alla vostra tavola.</p>
+    </div>
+    <div class="reveal">
+      <p class="font-display text-4xl text-gold-deep mb-4">04</p>
+      <h3 class="text-base font-medium mb-2">Vivi l'esperienza</h3>
+      <p class="text-sm text-ink/65 leading-relaxed">Restate ospiti dall'inizio alla fine. Io penso al resto, compreso il riordino.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5. GALLERIA -->
+<section id="galleria" class="bg-forest text-cream py-24 md:py-36 scroll-mt-20">
+  <div class="max-w-content mx-auto px-6 md:px-10">
+    <div class="max-w-xl mb-16 reveal">
+      <p class="eyebrow text-xs uppercase text-gold mb-4">Galleria</p>
+      <h2 class="font-display text-3xl md:text-4xl leading-tight">Una selezione, non un archivio</h2>
+    </div>
+
+    <div class="gallery-grid grid grid-cols-1 md:grid-cols-4 md:auto-rows-[160px] gap-4 md:gap-5">
+      <!-- 1. Chef che impiatta -->
+      <div class="reveal gallery-tile aspect-square md:aspect-auto rounded-sm overflow-hidden md:col-start-1 md:col-end-3 md:row-start-1 md:row-end-4">
+        <img src="assets/img/galleria-dettaglio-impiattamento.webp" alt="Chef che impiatta: rifinitura del piatto con fior di sale" class="w-full h-full object-cover" />
+      </div>
+      <!-- 2. Ingredienti disposti dall'alto -->
+      <div class="reveal gallery-tile aspect-square md:aspect-auto rounded-sm overflow-hidden md:col-start-3 md:col-end-4 md:row-start-1 md:row-end-2">
+        <img src="assets/img/galleria-mise-en-place.webp" alt="Ingredienti selezionati disposti su un tavolo di legno" class="w-full h-full object-cover" />
+      </div>
+      <!-- 3. Chef al tagliere -->
+      <div class="reveal gallery-tile aspect-square md:aspect-auto rounded-sm overflow-hidden md:col-start-4 md:col-end-5 md:row-start-1 md:row-end-3">
+        <img src="assets/img/galleria-ingredienti-di-stagione.webp" alt="Chef prepara erbe, verdure e spezie al tagliere" class="w-full h-full object-cover" />
+      </div>
+      <!-- 4. Gesto: bistecca in padella -->
+      <div class="reveal gallery-tile aspect-square md:aspect-auto rounded-sm overflow-hidden md:col-start-3 md:col-end-4 md:row-start-2 md:row-end-3">
+        <img src="assets/img/galleria-tecnica.jpeg" alt="Gesto: chef nappa una tartare alla griglia con succo di limone" class="w-full h-full object-cover" />
+      </div>
+      <!-- 5. Signature Dish: spaghetti -->
+      <div class="reveal gallery-tile aspect-square md:aspect-auto rounded-sm overflow-hidden md:col-start-3 md:col-end-5 md:row-start-3 md:row-end-4">
+        <img src="assets/img/galleria-piatto-signature.png" alt="Piatto signature: spaghetti con vongole e cozze" class="w-full h-full object-cover" />
+      </div>
+      <!-- 6. Atmosfera Tavola: fila di antipasti -->
+      <div class="reveal gallery-tile aspect-square md:aspect-auto rounded-sm overflow-hidden md:col-start-1 md:col-end-2 md:row-start-4 md:row-end-5">
+        <img src="assets/img/galleria-tavola-apparecchiata.png" alt="Atmosfera tavola: fila di piatti raffinati pronti per il servizio" class="w-full h-full object-cover" />
+      </div>
+      <!-- 7. Relazione: amici a tavola -->
+      <div class="reveal gallery-tile aspect-square md:aspect-auto rounded-sm overflow-hidden md:col-start-2 md:col-end-3 md:row-start-4 md:row-end-5">
+        <img src="assets/img/galleria-relazione.webp" alt="Relazione: amici seduti a tavola brindano e condividono un pasto in compagnia" class="w-full h-full object-cover" />
+      </div>
+      <!-- 8. Dessert -->
+      <div class="reveal gallery-tile aspect-square md:aspect-auto rounded-sm overflow-hidden md:col-start-3 md:col-end-5 md:row-start-4 md:row-end-5">
+        <img src="assets/img/galleria-dolce.webp" alt="Dessert: panna cotta con ribes rosso, fragole e agrumi" class="w-full h-full object-cover" />
+      </div>
+      <!-- 9. Brindisi / Esperienza finale -->
+      <div class="reveal gallery-tile aspect-[2/1] md:aspect-auto rounded-sm overflow-hidden md:col-start-1 md:col-end-5 md:row-start-5 md:row-end-6">
+        <img src="assets/img/galleria-brindisi.webp" alt="Brindisi: calici di vino che si toccano a tavola in un'atmosfera calda e conviviale" class="w-full h-full object-cover object-[50%_20%]" />
+      </div>
+    </div>
+    <!-- Foto di ripiego temporanee, da sostituire con scatti dedicati: Relazione, Dettaglio, Brindisi / Esperienza finale -->
+  </div>
+</section>
+
+<!-- 6. TESTIMONIANZE -->
+<section id="testimonianze" class="max-w-content mx-auto px-6 md:px-10 py-24 md:py-36 scroll-mt-20">
+  <p class="eyebrow text-xs uppercase text-gold-deep mb-4 reveal">Testimonianze</p>
+  <h2 class="font-display text-3xl md:text-4xl leading-tight mb-16 max-w-xl reveal">Le parole di chi era a tavola</h2>
+
+  <!-- Citazioni illustrative: da sostituire con testimonianze reali e verificabili
+       (nome/contesto) prima del lancio — vedi CONTENUTI-DA-COMPLETARE.md -->
+  <div class="grid md:grid-cols-3 gap-10 md:gap-8 mb-20">
+    <figure class="reveal">
+      <blockquote class="font-display text-lg italic leading-relaxed mb-6">"Una cena che è rimasta nella memoria di tutti gli ospiti, non solo nel piatto."</blockquote>
+      <figcaption class="text-sm text-ink/55">Cena per 8 · Villa Belvedere, giugno 2026</figcaption>
+    </figure>
+    <figure class="reveal">
+      <blockquote class="font-display text-lg italic leading-relaxed mb-6">"Ha ascoltato quello che volevamo prima ancora di parlare di menù. Si è visto nel risultato."</blockquote>
+      <figcaption class="text-sm text-ink/55">Anniversario · Residenza privata, Como</figcaption>
+    </figure>
+    <figure class="reveal">
+      <blockquote class="font-display text-lg italic leading-relaxed mb-6">"Servizio impeccabile, misurato, mai invadente. Esattamente quello che cercavamo."</blockquote>
+      <figcaption class="text-sm text-ink/55">Evento aziendale ristretto · Toscana</figcaption>
+    </figure>
+  </div>
+
+  <!-- Numeri "in aggiornamento": mostrare solo cifre reali e verificate -->
+  <div class="grid grid-cols-3 gap-6 border-t border-line pt-10 reveal">
+    <div>
+      <p class="font-display text-3xl md:text-4xl text-gold-deep stat-pending">—</p>
+      <p class="text-xs md:text-sm text-ink/55 mt-2">esperienze curate <span class="italic">(dato in aggiornamento)</span></p>
+    </div>
+    <div>
+      <p class="font-display text-3xl md:text-4xl text-gold-deep stat-pending">—</p>
+      <p class="text-xs md:text-sm text-ink/55 mt-2">anni di esperienza <span class="italic">(dato in aggiornamento)</span></p>
+    </div>
+    <div>
+      <p class="font-display text-3xl md:text-4xl text-gold-deep stat-pending">—</p>
+      <p class="text-xs md:text-sm text-ink/55 mt-2">ospiti serviti <span class="italic">(dato in aggiornamento)</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- 7. INSTAGRAM -->
+<section id="instagram" class="bg-white/60 border-y border-line py-24 md:py-36 scroll-mt-20">
+  <div class="max-w-content mx-auto px-6 md:px-10">
+    <div class="flex flex-wrap items-end justify-between gap-6 mb-16 reveal">
+      <div class="max-w-xl">
+        <p class="eyebrow text-xs uppercase text-gold-deep mb-4">Instagram</p>
+        <h2 class="font-display text-3xl md:text-4xl leading-tight">Una selezione dai contenuti</h2>
+      </div>
+      <a href="https://instagram.com/chefyuri" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm link-underline pb-1">
+        Segui su Instagram
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <!-- Selezione manuale di Reel — NON un feed automatico. Sostituire ogni placeholder
+         con l'embed reale del Reel scelto prima del lancio. -->
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+      <div class="aspect-[9/16] ph-photo rounded-sm">
+        <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5v-7Z" fill="currentColor" stroke="none"/></svg>
+        <span class="ph-caption">Reel</span>
+      </div>
+      <div class="aspect-[9/16] ph-photo rounded-sm">
+        <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5v-7Z" fill="currentColor" stroke="none"/></svg>
+        <span class="ph-caption">Reel</span>
+      </div>
+      <div class="aspect-[9/16] ph-photo rounded-sm">
+        <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5v-7Z" fill="currentColor" stroke="none"/></svg>
+        <span class="ph-caption">Reel</span>
+      </div>
+      <div class="aspect-[9/16] ph-photo rounded-sm">
+        <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5v-7Z" fill="currentColor" stroke="none"/></svg>
+        <span class="ph-caption">Reel</span>
+      </div>
+      <div class="aspect-[9/16] ph-photo rounded-sm hidden md:flex">
+        <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5v-7Z" fill="currentColor" stroke="none"/></svg>
+        <span class="ph-caption">Reel</span>
+      </div>
+      <div class="aspect-[9/16] ph-photo rounded-sm hidden lg:flex">
+        <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5v-7Z" fill="currentColor" stroke="none"/></svg>
+        <span class="ph-caption">Reel</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. PRENOTAZIONE -->
+<section id="prenotazione" class="max-w-content mx-auto px-6 md:px-10 py-24 md:py-36 scroll-mt-20">
+  <div class="grid md:grid-cols-2 gap-16">
+    <div class="reveal">
+      <p class="eyebrow text-xs uppercase text-gold-deep mb-4">Prenotazione</p>
+      <h2 class="font-display text-3xl md:text-4xl leading-tight mb-6">Raccontami la tua occasione</h2>
+      <p class="text-ink/70 text-[15px] leading-relaxed max-w-md mb-10">
+        Compila il modulo con qualche dettaglio: data, numero di ospiti e il contesto dell'evento. Rispondo personalmente entro 48 ore per fissare una prima conversazione.
+      </p>
+
+      <div class="space-y-4">
+        <!-- TODO: sostituire con il numero WhatsApp business reale prima del lancio -->
+        <a href="https://wa.me/393895582429" target="_blank" rel="noopener" class="inline-flex items-center gap-3 text-sm border border-line rounded-full px-5 py-3 hover:border-gold transition-colors duration-300 w-fit">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.87 9.87 0 0 0 4.75 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.78 14.12c-.24.68-1.4 1.32-1.94 1.4-.5.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.62-.6-2.86-1.24-4.73-4.13-4.87-4.32-.14-.19-1.17-1.55-1.17-2.96 0-1.41.74-2.1 1-2.39.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.53.72 1.79.85.26.14.43.2.5.31.06.11.06.65-.18 1.33z"/></svg>
+          Scrivimi su WhatsApp
+        </a>
+
+        <div class="text-sm text-ink/70 pt-2">
+          <p>info@chefyuri.it</p>
+          <p class="mt-1">Su richiesta — Italia ed estero</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <form id="booking-form" class="space-y-6" novalidate>
+        <div>
+          <label for="nome" class="block text-sm mb-2">Nome e cognome</label>
+          <input id="nome" name="nome" type="text" required autocomplete="name"
+            class="w-full border border-line bg-transparent rounded-sm px-4 py-3 text-[15px] focus:border-gold transition-colors duration-300" />
+        </div>
+
+        <div>
+          <label for="esperienza" class="block text-sm mb-2">Tipo di esperienza</label>
+          <select id="esperienza" name="esperienza"
+            class="w-full border border-line bg-transparent rounded-sm px-4 py-3 text-[15px] focus:border-gold transition-colors duration-300">
+            <option value="">Seleziona…</option>
+            <option value="cena-privata">Cena Privata</option>
+            <option value="chef-in-villa">Chef in Villa</option>
+            <option value="cooking-class">Cooking Class</option>
+            <option value="eventi-aziendali">Eventi Aziendali</option>
+            <option value="proposta-di-matrimonio">Proposta di Matrimonio</option>
+            <option value="compleanni">Compleanno</option>
+            <option value="anniversari">Anniversario</option>
+            <option value="altro">Altro / non so ancora</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label for="data" class="block text-sm mb-2">Data evento</label>
+            <input id="data" name="data" type="date" autocomplete="off"
+              class="w-full border border-line bg-transparent rounded-sm px-4 py-3 text-[15px] focus:border-gold transition-colors duration-300" />
+          </div>
+          <div>
+            <label for="ospiti" class="block text-sm mb-2">N. ospiti</label>
+            <input id="ospiti" name="ospiti" type="number" min="1" inputmode="numeric"
+              class="w-full border border-line bg-transparent rounded-sm px-4 py-3 text-[15px] focus:border-gold transition-colors duration-300" />
+          </div>
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm mb-2">Email</label>
+          <input id="email" name="email" type="email" required autocomplete="email"
+            class="w-full border border-line bg-transparent rounded-sm px-4 py-3 text-[15px] focus:border-gold transition-colors duration-300" />
+        </div>
+
+        <div>
+          <label for="messaggio" class="block text-sm mb-2">Messaggio</label>
+          <textarea id="messaggio" name="messaggio" rows="4"
+            class="w-full border border-line bg-transparent rounded-sm px-4 py-3 text-[15px] focus:border-gold transition-colors duration-300"></textarea>
+        </div>
+
+        <div class="flex items-start gap-3 pt-1">
+          <input id="call-toggle" name="call-toggle" type="checkbox" class="mt-1 h-4 w-4 accent-gold" />
+          <label for="call-toggle" class="text-sm text-ink/75">Preferisco essere ricontattato/a per una breve call, invece che via email.</label>
+        </div>
+
+        <div id="call-phone-field" class="hidden">
+          <label for="telefono" class="block text-sm mb-2">Numero di telefono</label>
+          <input id="telefono" name="telefono" type="tel" autocomplete="tel"
+            class="w-full border border-line bg-transparent rounded-sm px-4 py-3 text-[15px] focus:border-gold transition-colors duration-300" />
+        </div>
+
+        <button type="submit" class="inline-flex items-center justify-center rounded-full bg-ink text-white px-7 py-3.5 text-sm font-medium border border-ink hover:bg-transparent hover:text-ink transition-colors duration-300">
+          Invia richiesta
+        </button>
+
+        <p id="form-success" role="status" aria-live="polite" tabindex="-1" class="hidden text-sm text-ink/70 pt-1">Grazie, il messaggio è stato preparato — collega il form a un servizio di invio per renderlo attivo.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="border-t border-line py-12">
+  <div class="max-w-content mx-auto px-6 md:px-10 flex flex-col md:flex-row items-center justify-between gap-6">
+    <a href="#top" class="font-display text-lg">Chef Yuri</a>
+
+    <nav class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-ink/70" aria-label="Sitemap">
+      <a href="#chi-sono" class="link-underline pb-1">Chi sono</a>
+      <a href="#esperienze" class="link-underline pb-1">Esperienze</a>
+      <a href="#come-funziona" class="link-underline pb-1">Come funziona</a>
+      <a href="#galleria" class="link-underline pb-1">Galleria</a>
+      <a href="#testimonianze" class="link-underline pb-1">Testimonianze</a>
+      <a href="#instagram" class="link-underline pb-1">Instagram</a>
+      <a href="#prenotazione" class="link-underline pb-1">Prenotazione</a>
+    </nav>
+
+    <div class="flex items-center gap-4">
+      <a href="https://instagram.com/chefyuri" target="_blank" rel="noopener" aria-label="Instagram" class="text-ink/60 hover:text-gold-deep transition-colors duration-300">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://wa.me/393895582429" target="_blank" rel="noopener" aria-label="WhatsApp" class="text-ink/60 hover:text-gold-deep transition-colors duration-300">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.87 9.87 0 0 0 4.75 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.78 14.12c-.24.68-1.4 1.32-1.94 1.4-.5.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.62-.6-2.86-1.24-4.73-4.13-4.87-4.32-.14-.19-1.17-1.55-1.17-2.96 0-1.41.74-2.1 1-2.39.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.53.72 1.79.85.26.14.43.2.5.31.06.11.06.65-.18 1.33z"/></svg>
+      </a>
+    </div>
+  </div>
+  <p class="text-center text-xs text-ink/40 mt-8">© 2026 Chef Yuri. Tutti i diritti riservati.</p>
+</footer>
+
+<!-- TODO: sostituire con il numero WhatsApp business reale prima del lancio -->
+<div class="fab-stack">
+  <a href="https://wa.me/393895582429" target="_blank" rel="noopener" class="fab-btn" aria-label="Scrivimi su WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.87 9.87 0 0 0 4.75 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.78 14.12c-.24.68-1.4 1.32-1.94 1.4-.5.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.62-.6-2.86-1.24-4.73-4.13-4.87-4.32-.14-.19-1.17-1.55-1.17-2.96 0-1.41.74-2.1 1-2.39.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.53.72 1.79.85.26.14.43.2.5.31.06.11.06.65-.18 1.33z"/></svg>
+  </a>
+  <button type="button" id="fab-top" class="fab-btn" aria-label="Torna in cima alla pagina">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+  </button>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

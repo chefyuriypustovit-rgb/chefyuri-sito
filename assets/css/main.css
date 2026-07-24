@@ -1,0 +1,164 @@
+/* Chef Yuri — Private Chef — stili condivisi (brief v2) */
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body { font-family: 'Inter', sans-serif; }
+.font-display { font-family: 'Fraunces', serif; }
+
+.eyebrow { letter-spacing: 0.18em; }
+
+/* Reveal-on-scroll (animazione leggera, no autoplay musicale/effetti appariscenti) */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity 700ms ease, transform 700ms ease; }
+.reveal.in-view { opacity: 1; transform: translateY(0); }
+
+/* Galleria: rivelazione a cascata (1→9) + zoom lento continuo (Ken Burns) + hover */
+.gallery-grid > div:nth-child(1) { transition-delay: 0ms; }
+.gallery-grid > div:nth-child(2) { transition-delay: 90ms; }
+.gallery-grid > div:nth-child(3) { transition-delay: 180ms; }
+.gallery-grid > div:nth-child(4) { transition-delay: 270ms; }
+.gallery-grid > div:nth-child(5) { transition-delay: 360ms; }
+.gallery-grid > div:nth-child(6) { transition-delay: 450ms; }
+.gallery-grid > div:nth-child(7) { transition-delay: 540ms; }
+.gallery-grid > div:nth-child(8) { transition-delay: 630ms; }
+.gallery-grid > div:nth-child(9) { transition-delay: 720ms; }
+
+.gallery-tile img {
+  animation: kenburns 18s ease-in-out infinite alternate;
+  transition: scale 500ms ease;
+}
+.gallery-tile:hover img { scale: 1.045; }
+
+@keyframes kenburns {
+  from { transform: scale(1); }
+  to   { transform: scale(1.09); }
+}
+
+.link-underline {
+  background-image: linear-gradient(#C6A664, #C6A664);
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  transition: background-size 250ms ease;
+}
+.link-underline:hover { background-size: 100% 1px; }
+
+input:focus, textarea:focus, select:focus, a:focus-visible, button:focus-visible {
+  outline: 2px solid #8C6B34;
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   PLACEHOLDER FOTOGRAFICI
+   Nessuna foto reale è ancora disponibile (vedi CONTENUTI-DA-COMPLETARE.md).
+   Trattamento intenzionale, tono-su-tono nella palette del brand,
+   chiaramente riconoscibile come segnaposto — non stock photo generica.
+   Sostituire ogni .ph-photo con una vera fotografia prima del lancio.
+   ============================================================ */
+.ph-photo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(198,166,100,0.16) 0%, rgba(20,33,24,0.05) 45%, rgba(28,28,26,0.08) 100%),
+    #EFEAE0;
+}
+.ph-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(135deg, rgba(28,28,26,0.03) 0px, rgba(28,28,26,0.03) 1px, transparent 1px, transparent 14px);
+}
+.ph-icon {
+  width: 30px;
+  height: 30px;
+  color: rgba(28,28,26,0.28);
+  position: relative;
+  z-index: 1;
+}
+.ph-caption {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 1;
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(28,28,26,0.62);
+  background: rgba(250,248,243,0.78);
+  padding: 5px 11px;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+  white-space: nowrap;
+}
+.ph-photo--dark {
+  background:
+    linear-gradient(135deg, rgba(198,166,100,0.14) 0%, rgba(250,248,243,0.04) 45%, rgba(250,248,243,0.03) 100%),
+    #1B2A20;
+}
+.ph-photo--dark::before {
+  background-image: repeating-linear-gradient(135deg, rgba(250,248,243,0.04) 0px, rgba(250,248,243,0.04) 1px, transparent 1px, transparent 14px);
+}
+.ph-photo--dark .ph-icon { color: rgba(250,248,243,0.32); }
+.ph-photo--dark .ph-caption {
+  color: rgba(250,248,243,0.75);
+  background: rgba(28,28,26,0.55);
+}
+
+/* Statistiche "in aggiornamento" — numeri reali da confermare (brief §3.6) */
+.stat-pending { font-variant-numeric: tabular-nums; }
+
+/* ============================================================
+   PULSANTI FLOTTANTI (WhatsApp + torna su)
+   Fissi in basso a destra, visibili durante lo scroll su ogni pagina.
+   ============================================================ */
+.fab-stack {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.fab-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 999px;
+  background-color: #1C1C1A;
+  color: #FAF8F3;
+  box-shadow: 0 6px 20px rgba(28,28,26,0.28);
+  transition: background-color 250ms ease, transform 250ms ease;
+}
+.fab-btn:hover { background-color: #8C6B34; }
+.fab-btn:active { transform: scale(0.94); }
+
+#fab-top {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 250ms ease, transform 250ms ease, visibility 250ms, background-color 250ms ease;
+}
+#fab-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .fab-btn, #fab-top { transition: none; }
+}
