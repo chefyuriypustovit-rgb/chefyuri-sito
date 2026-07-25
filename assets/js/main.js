@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   /* --- Nav: stato trasparente-su-hero (solo home, body[data-nav="transparent"]) --- */
   const nav = document.getElementById('site-nav');
   const navLogo = document.getElementById('nav-logo');
-  const navCta = document.getElementById('nav-cta');
   const navLinksAnchors = nav ? nav.querySelectorAll('#nav-links a:not(#nav-cta)') : [];
   const transparentNav = document.body.dataset.nav === 'transparent';
 
@@ -14,18 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!transparentNav || scrolled) {
       nav.classList.add('bg-cream/95', 'backdrop-blur', 'border-b', 'border-line');
       navLogo && navLogo.classList.remove('invert');
-      if (navCta) {
-        navCta.classList.remove('border-white', 'text-white');
-        navCta.classList.add('border-ink', 'text-ink', 'hover:bg-ink', 'hover:text-white');
-      }
       navLinksAnchors.forEach(a => a.classList.remove('text-white'));
     } else {
       nav.classList.remove('bg-cream/95', 'backdrop-blur', 'border-b', 'border-line');
       navLogo && navLogo.classList.add('invert');
-      if (navCta) {
-        navCta.classList.add('border-white', 'text-white');
-        navCta.classList.remove('border-ink', 'text-ink', 'hover:bg-ink', 'hover:text-white');
-      }
       navLinksAnchors.forEach(a => a.classList.add('text-white'));
     }
   }
@@ -73,6 +64,25 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, { threshold: 0.15 });
     revealEls.forEach(el => io.observe(el));
+  }
+
+  /* --- Galleria: colonna immagine pinnata, crossfade guidato dalla didascalia attiva
+       (solo desktop ≥1024px; su mobile questi elementi restano in "hidden" e non intersecano mai) --- */
+  const pinCaps = document.querySelectorAll('[data-pin-cap]');
+  const pinImgs = document.querySelectorAll('[data-pin-img]');
+  if (pinCaps.length && pinImgs.length) {
+    const setActivePin = (index) => {
+      pinImgs.forEach(img => img.classList.toggle('active', img.dataset.pinImg === index));
+      pinCaps.forEach(cap => cap.classList.toggle('active', cap.dataset.pinCap === index));
+    };
+    const pinObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActivePin(entry.target.dataset.pinCap);
+        }
+      });
+    }, { rootMargin: '-25% 0px -25% 0px', threshold: 0 });
+    pinCaps.forEach(cap => pinObserver.observe(cap));
   }
 
   /* --- Form di prenotazione: toggle "richiedi una call" --- */
