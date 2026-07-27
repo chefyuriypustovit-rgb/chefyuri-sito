@@ -66,23 +66,80 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach(el => io.observe(el));
   }
 
-  /* --- Galleria: colonna immagine pinnata, crossfade guidato dalla didascalia attiva
-       (solo desktop ≥1024px; su mobile questi elementi restano in "hidden" e non intersecano mai) --- */
-  const pinCaps = document.querySelectorAll('[data-pin-cap]');
-  const pinImgs = document.querySelectorAll('[data-pin-img]');
-  if (pinCaps.length && pinImgs.length) {
-    const setActivePin = (index) => {
-      pinImgs.forEach(img => img.classList.toggle('active', img.dataset.pinImg === index));
-      pinCaps.forEach(cap => cap.classList.toggle('active', cap.dataset.pinCap === index));
-    };
-    const pinObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setActivePin(entry.target.dataset.pinCap);
-        }
-      });
-    }, { rootMargin: '-25% 0px -25% 0px', threshold: 0 });
-    pinCaps.forEach(cap => pinObserver.observe(cap));
+  /* --- Galleria: carosello 3D ad anello ---
+       Stessa interazione su desktop e mobile, nessuno scroll-jacking: l'anello ruota
+       SOLO trascinando orizzontalmente sopra .ring-stage (pointerdown/move/up), lo
+       scroll verticale della pagina non viene mai intercettato (touch-action: pan-y).
+       Segue il puntatore in tempo reale durante il drag, poi scatta ("snap") sul
+       pannello più vicino al rilascio. Frecce e pallini funzionano sempre, anche
+       con prefers-reduced-motion (in quel caso la transizione è già azzerata a
+       livello globale, vedi regola @media in cima al file). --- */
+  const ringStage = document.querySelector('.ring-stage');
+  const ringEl = document.getElementById('gallery-ring');
+  if (ringStage && ringEl) {
+    const totalPanels = ringEl.querySelectorAll('.panel').length;
+    const stepDeg = 360 / totalPanels;
+    const dots = document.querySelectorAll('[data-ring-dot]');
+    const prevBtn = document.getElementById('ring-prev');
+    const nextBtn = document.getElementById('ring-next');
+
+    let currentIndex = 0;
+    let currentAngle = 0; // gradi, valore continuo (non ri-wrappato durante il drag)
+
+    function setRadius() {
+      const panelWidth = ringEl.offsetWidth;
+      const radius = panelWidth / (2 * Math.tan(Math.PI / totalPanels));
+      ringEl.style.setProperty('--ring-radius', `${radius}px`);
+    }
+    setRadius();
+    window.addEventListener('resize', setRadius);
+
+    function applyAngle(angle) {
+      ringEl.style.transform = `rotateY(${angle}deg)`;
+    }
+
+    function snapTo(index) {
+      currentIndex = ((index % totalPanels) + totalPanels) % totalPanels;
+      currentAngle = -currentIndex * stepDeg;
+      applyAngle(currentAngle);
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+    }
+
+    prevBtn && prevBtn.addEventListener('click', () => snapTo(currentIndex - 1));
+    nextBtn && nextBtn.addEventListener('click', () => snapTo(currentIndex + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => snapTo(i)));
+    snapTo(0);
+
+    let dragging = false;
+    let startX = 0;
+    let startAngle = 0;
+
+    ringStage.addEventListener('pointerdown', (e) => {
+      if (e.target.closest('.ring-arrow')) return; // lascia il click nativo del pulsante, non avviare il drag
+      dragging = true;
+      startX = e.clientX;
+      startAngle = currentAngle;
+      ringEl.classList.add('dragging');
+      ringStage.setPointerCapture(e.pointerId);
+    });
+
+    ringStage.addEventListener('pointermove', (e) => {
+      if (!dragging) return;
+      const deltaX = e.clientX - startX;
+      const panelWidth = ringEl.offsetWidth || 1;
+      const degreesPerPixel = stepDeg / panelWidth;
+      currentAngle = startAngle + deltaX * degreesPerPixel;
+      applyAngle(currentAngle);
+    });
+
+    function endDrag() {
+      if (!dragging) return;
+      dragging = false;
+      ringEl.classList.remove('dragging');
+      snapTo(Math.round(-currentAngle / stepDeg));
+    }
+    ringStage.addEventListener('pointerup', endDrag);
+    ringStage.addEventListener('pointercancel', endDrag);
   }
 
   /* --- Form di prenotazione: toggle "richiedi una call" --- */

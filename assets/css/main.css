@@ -12,8 +12,12 @@ html { scroll-behavior: smooth; }
   }
 }
 
-body { font-family: 'Inter', sans-serif; }
+body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
 .font-display { font-family: 'Fraunces', serif; }
+
+/* Breakout: fa uscire un elemento dal contenitore max-width del genitore per
+   occupare tutta la larghezza del viewport, indipendentemente da dove è annidato. */
+.full-bleed { width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); }
 
 .eyebrow { letter-spacing: 0.18em; font-weight: 600; }
 
@@ -21,21 +25,101 @@ body { font-family: 'Inter', sans-serif; }
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity 700ms ease, transform 700ms ease; }
 .reveal.in-view { opacity: 1; transform: translateY(0); }
 
-/* Galleria: colonna immagine pinnata (sticky) + crossfade guidato da IntersectionObserver */
-.gallery-pin-img {
-  opacity: 0;
-  transition: opacity 500ms ease;
-  will-change: opacity;
+/* Hero: indicatore di scroll animato (rispetta prefers-reduced-motion tramite la regola globale in cima al file) */
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.7; }
+  50% { transform: translateY(6px); opacity: 1; }
 }
-.gallery-pin-img.active { opacity: 1; }
+.scroll-bounce { animation: scroll-bounce 1.8s ease-in-out infinite; }
 
-.gallery-cap-block {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 400ms ease, transform 400ms ease;
-  will-change: opacity, transform;
+/* Galleria: carosello 3D ad anello, full-bleed (drag orizzontale, nessuno scroll-jacking) */
+.ring-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1600px;
+  overflow: hidden;
+  height: 88vh;
+  touch-action: pan-y;
+  user-select: none;
 }
-.gallery-cap-block.active { opacity: 1; transform: translateY(0); }
+
+.ring {
+  /* Il pannello frontale viene ingrandito dalla prospettiva 3D (~1.4-1.5× a queste
+     distanze): l'altezza autorata resta volutamente sotto i 70vh "a schermo piatto"
+     richiesti, così l'ingrandimento la riporta lì senza uscire dai bordi di .ring-stage
+     (88vh, overflow:hidden). Va comunque confermato a schermo. */
+  --panel-w: min(40vw, 620px);
+  --panel-h: min(52vh, 460px);
+  --ring-radius: 0px;
+  position: relative;
+  width: var(--panel-w);
+  height: var(--panel-h);
+  transform-style: preserve-3d;
+  transition: transform 550ms cubic-bezier(0.22,1,0.36,1);
+  cursor: grab;
+  will-change: transform;
+}
+.ring.dragging { transition: none; cursor: grabbing; }
+
+.panel {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px rgba(250,248,243,0.08);
+  backface-visibility: hidden;
+  transform: rotateY(var(--panel-angle)) translateZ(var(--ring-radius));
+}
+.panel:nth-child(1) { --panel-angle: 0deg; }
+.panel:nth-child(2) { --panel-angle: 60deg; }
+.panel:nth-child(3) { --panel-angle: 120deg; }
+.panel:nth-child(4) { --panel-angle: 180deg; }
+.panel:nth-child(5) { --panel-angle: 240deg; }
+.panel:nth-child(6) { --panel-angle: 300deg; }
+
+.ring-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  border: 1px solid rgba(250,248,243,0.35);
+  background: rgba(20,33,24,0.35);
+  backdrop-filter: blur(4px);
+  color: #FAF8F3;
+  transform: translateY(-50%);
+  transition: border-color 250ms ease, background-color 250ms ease;
+}
+.ring-arrow:hover { border-color: #C6A664; background-color: rgba(198,166,100,0.18); }
+.ring-arrow--prev { left: 4vw; }
+.ring-arrow--next { right: 4vw; }
+
+.ring-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(250,248,243,0.3);
+  transition: background-color 250ms ease, transform 250ms ease;
+}
+.ring-dot.active { background: #C6A664; transform: scale(1.35); }
+
+@media (max-width: 767px) {
+  .ring-stage { height: 72vh; }
+  .ring {
+    --panel-w: min(72vw, 420px);
+    --panel-h: min(54vh, 380px);
+  }
+  .ring-arrow { width: 40px; height: 40px; }
+  .ring-arrow--prev { left: 3vw; }
+  .ring-arrow--next { right: 3vw; }
+}
 
 .link-underline {
   background-image: linear-gradient(#C6A664, #C6A664);
