@@ -73,6 +73,6 @@ passo:
       (index.html + tutte le pagine esperienze + pulsanti flottanti)
 
 ## 7. Altri dettagli minori
-- [ ] Email di contatto `info@chefyuri.it` — confermare che sia quella corretta
+- [x] Email di contatto aggiornata a `chefyuriypustovit@gmail.com`
 - [ ] Dominio nei tag `canonical` / `og:` — attualmente placeholder `https://www.chefyuri.it/`
 - [ ] Collegare il form di prenotazione a un servizio reale di invio (es. Formspree, backend proprio) — attualmente mostra solo un messaggio di conferma lato client, senza inviare nulla

@@ -25,6 +25,60 @@ body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity 700ms ease, transform 700ms ease; }
 .reveal.in-view { opacity: 1; transform: translateY(0); }
 
+/* Chi Sono — racconto editoriale: reveal più lento e cadenzato, citazione
+   e firma che appaiono per ultime (scoperto per specificità con #chi-sono,
+   riusa lo stesso meccanismo .reveal/.in-view condiviso dal resto del sito). */
+#chi-sono .reveal {
+  transform: translateY(10px);
+  transition: opacity 1100ms ease, transform 1100ms ease;
+}
+#chi-sono .reveal.in-view { transform: translateY(0); }
+
+#chi-sono .reveal-delay-b { transition-delay: 150ms; }
+#chi-sono .reveal-delay-c { transition-delay: 300ms; }
+#chi-sono .reveal-quote { transition-delay: 350ms; }
+#chi-sono .reveal-signature { transition-delay: 600ms; }
+
+/* Esperienze — card immersive: reveal con ingresso alternato da sinistra/destra
+   e leggero ritardo scaglionato tra le card (scoperto con #esperienze,
+   riusa lo stesso meccanismo .reveal/.in-view condiviso dal resto del sito;
+   l'osservatore JS disosserva ogni elemento dopo il primo ingresso, quindi
+   l'animazione non si ripete mai in fase di scroll indietro). */
+#esperienze .reveal-x-left,
+#esperienze .reveal-x-right {
+  transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1), transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+#esperienze .reveal-x-left { transform: translateX(-44px); }
+#esperienze .reveal-x-right { transform: translateX(44px); }
+#esperienze .reveal-x-left.in-view,
+#esperienze .reveal-x-right.in-view { transform: translateX(0); }
+
+/* Esperienze — intestazione editoriale: parola gigante in trasparenza dietro
+   etichetta/titolo/paragrafo, ingresso a scaglioni (parola di sfondo, poi
+   etichetta, poi titolo, poi paragrafo) */
+#esperienze .editorial-reveal {
+  transform: translateY(30px);
+  transition: opacity 800ms ease-out, transform 800ms ease-out;
+}
+#esperienze .editorial-reveal.in-view { transform: translateY(0); }
+/* TEMPORANEO — diagnosi 2026-07-28: stato finale applicato subito,
+   senza attendere .in-view/IntersectionObserver, per isolare se il
+   problema di visibilità del watermark dipende dal reveal-on-scroll. */
+#esperienze .editorial-bg-word {
+  opacity: 0.06 !important;
+  transform: translateY(0) !important;
+}
+#esperienze .editorial-delay-1 { transition-delay: 150ms; }
+#esperienze .editorial-delay-2 { transition-delay: 300ms; }
+#esperienze .editorial-delay-3 { transition-delay: 450ms; }
+
+#esperienze .reveal-d1 { transition-delay: 90ms; }
+#esperienze .reveal-d2 { transition-delay: 160ms; }
+#esperienze .reveal-d3 { transition-delay: 230ms; }
+#esperienze .reveal-d4 { transition-delay: 300ms; }
+#esperienze .reveal-d5 { transition-delay: 370ms; }
+#esperienze .reveal-d6 { transition-delay: 440ms; }
+
 /* Hero: indicatore di scroll animato (rispetta prefers-reduced-motion tramite la regola globale in cima al file) */
 @keyframes scroll-bounce {
   0%, 100% { transform: translateY(0); opacity: 0.7; }
