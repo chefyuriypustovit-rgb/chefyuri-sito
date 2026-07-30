@@ -164,12 +164,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* --- Form di prenotazione: submit (nessun backend collegato ancora) --- */
+  /* --- Form di prenotazione: submit via Formspree (AJAX, senza ricaricare la pagina) --- */
   const form = document.getElementById('booking-form');
   const success = document.getElementById('form-success');
   if (form && success) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' },
+        });
+        if (response.ok) {
+          success.textContent = 'Grazie, la richiesta è stata inviata — rispondo personalmente entro 48 ore.';
+          form.reset();
+        } else {
+          success.textContent = "Si è verificato un errore nell'invio. Riprova, oppure scrivimi su WhatsApp.";
+        }
+      } catch (err) {
+        success.textContent = "Si è verificato un errore nell'invio. Riprova, oppure scrivimi su WhatsApp.";
+      }
       success.classList.remove('hidden');
       success.focus({ preventScroll: true });
     });
