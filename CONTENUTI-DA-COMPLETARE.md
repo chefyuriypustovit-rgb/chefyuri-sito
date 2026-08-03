@@ -74,5 +74,5 @@ passo:
 
 ## 7. Altri dettagli minori
 - [x] Email di contatto aggiornata a `chefyuriypustovit@gmail.com`
-- [ ] Dominio nei tag `canonical` / `og:` — attualmente placeholder `https://www.chefyuri.it/`
+- [x] Dominio nei tag `canonical` / `og:` — aggiornato a `https://chefyuriypustovit.com/` (03/08/2026)
 - [ ] Collegare il form di prenotazione a un servizio reale di invio (es. Formspree, backend proprio) — attualmente mostra solo un messaggio di conferma lato client, senza inviare nulla
