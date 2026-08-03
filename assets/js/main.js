@@ -170,6 +170,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (form && success) {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
       try {
         const response = await fetch(form.action, {
           method: form.method,
