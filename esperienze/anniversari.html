@@ -4,44 +4,106 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Chef Privato per Anniversari | Chef Yuri — Personal Chef</title>
-<meta name="description" content="Celebra un anniversario con una cena privata lenta e intima, costruita anche attorno alla vostra storia. Chef Yuri, personal chef." />
+<meta name="description" content="Celebra un anniversario, a Roma, Viterbo o nel Lazio, con una cena privata lenta e intima, costruita anche attorno alla vostra storia. Chef Yuri." />
 <link rel="canonical" href="https://chefyuriypustovit.com/esperienze/anniversari.html" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Chef Privato per Anniversari | Chef Yuri" />
-<meta property="og:description" content="Una cena privata lenta e intima, costruita anche attorno alla vostra storia." />
+<meta property="og:description" content="Una cena privata lenta e intima, a Roma, Viterbo o nel Lazio, costruita anche attorno alla vostra storia." />
 <meta property="og:url" content="https://chefyuriypustovit.com/esperienze/anniversari.html" />
 <meta property="og:image" content="https://chefyuriypustovit.com/assets/img/esperienza-anniversari-hero.webp" />
 <meta property="og:image:width" content="2048" />
 <meta property="og:image:height" content="1367" />
 <meta property="og:locale" content="it_IT" />
+<meta property="og:site_name" content="Chef Yuri — Personal Chef" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Chef Privato per Anniversari | Chef Yuri" />
+<meta name="twitter:description" content="Una cena privata lenta e intima, a Roma, Viterbo o nel Lazio, costruita anche attorno alla vostra storia." />
+<meta name="twitter:image" content="https://chefyuriypustovit.com/assets/img/esperienza-anniversari-hero.webp" />
+
+<link rel="alternate" hreflang="it-IT" href="https://chefyuriypustovit.com/esperienze/anniversari.html" />
+<link rel="alternate" hreflang="x-default" href="https://chefyuriypustovit.com/esperienze/anniversari.html" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: { cream: '#FAF8F3', ink: '#1C1C1A', forest: '#142118', gold: '#C6A664', 'gold-deep': '#8C6B34', line: '#E7E2D5' },
-        fontFamily: { serif: ['Fraunces', 'serif'], sans: ['Inter', 'sans-serif'] },
-        maxWidth: { 'content': '1240px' },
-      },
-    },
-  }
-</script>
+<!-- Precarico il vero elemento LCP: l'immagine hero a piena larghezza -->
+<link rel="preload" as="image" href="../assets/img/esperienza-anniversari-hero.webp" fetchpriority="high">
+
+<link rel="stylesheet" href="../assets/css/tailwind.css">
 <link rel="stylesheet" href="../assets/css/main.css">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "Chef privato per anniversari",
-  "name": "Anniversari — Chef Yuri",
-  "description": "Cena privata dal ritmo lento pensata per anniversari di matrimonio, di relazione o di famiglia.",
-  "provider": { "@type": "Person", "name": "Chef Yuri" },
-  "areaServed": "IT"
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://chefyuriypustovit.com/#business",
+      "name": "Chef Yuri — Personal Chef",
+      "alternateName": "Chef Privato Yuriy Pustovit",
+      "url": "https://chefyuriypustovit.com/",
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Lazio" },
+        { "@type": "AdministrativeArea", "name": "Umbria" },
+        { "@type": "AdministrativeArea", "name": "Toscana" },
+        { "@type": "City", "name": "Viterbo" },
+        { "@type": "City", "name": "Roma" }
+      ],
+      "founder": { "@id": "https://chefyuriypustovit.com/#person" },
+      "employee": { "@id": "https://chefyuriypustovit.com/#person" },
+      "availableLanguage": ["Italian"],
+      "sameAs": ["https://instagram.com/chefyuri"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://chefyuriypustovit.com/#person",
+      "name": "Yuriy Pustovit",
+      "alternateName": "Chef Yuri",
+      "jobTitle": "Personal Chef / Chef Privato",
+      "knowsAbout": ["Cucina italiana", "Fine dining", "Cucina di stagione", "Ospitalità privata", "Eventi gastronomici privati"],
+      "worksFor": { "@id": "https://chefyuriypustovit.com/#business" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://chefyuriypustovit.com/#website",
+      "name": "Chef Yuri — Personal Chef",
+      "url": "https://chefyuriypustovit.com/",
+      "publisher": { "@id": "https://chefyuriypustovit.com/#business" },
+      "inLanguage": "it-IT"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://chefyuriypustovit.com/esperienze/anniversari.html#service",
+      "serviceType": "Chef privato per anniversari",
+      "name": "Anniversari — Chef Yuri",
+      "description": "Cena privata dal ritmo lento pensata per anniversari di matrimonio, di relazione o di famiglia.",
+      "provider": { "@id": "https://chefyuriypustovit.com/#business" },
+      "areaServed": ["Roma", "Viterbo", "Lazio"]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://chefyuriypustovit.com/esperienze/anniversari.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://chefyuriypustovit.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Esperienze", "item": "https://chefyuriypustovit.com/#esperienze" },
+        { "@type": "ListItem", "position": 3, "name": "Anniversari", "item": "https://chefyuriypustovit.com/esperienze/anniversari.html" }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://chefyuriypustovit.com/esperienze/anniversari.html#webpage",
+      "url": "https://chefyuriypustovit.com/esperienze/anniversari.html",
+      "name": "Chef Privato per Anniversari | Chef Yuri — Personal Chef",
+      "isPartOf": { "@id": "https://chefyuriypustovit.com/#website" },
+      "about": { "@id": "https://chefyuriypustovit.com/esperienze/anniversari.html#service" },
+      "mainEntity": { "@id": "https://chefyuriypustovit.com/esperienze/anniversari.html#service" },
+      "breadcrumb": { "@id": "https://chefyuriypustovit.com/esperienze/anniversari.html#breadcrumb" },
+      "inLanguage": "it-IT"
+    }
+  ]
 }
 </script>
 </head>
@@ -58,7 +120,7 @@
         <a href="../index.html#chi-sono" class="link-underline pb-1 text-ink">Chi sono</a>
         <a href="../index.html#esperienze" class="link-underline pb-1 text-ink">Esperienze</a>
         <a href="../index.html#galleria" class="link-underline pb-1 text-ink">Galleria</a>
-        <a href="../index.html#testimonianze" class="link-underline pb-1 text-ink">Testimonianze</a>
+        <a href="../index.html#come-funziona" class="link-underline pb-1 text-ink">Come funziona</a>
         <a href="../index.html#prenotazione" class="inline-flex items-center rounded-full border border-ink text-ink px-5 py-2 text-sm hover:bg-ink hover:text-white transition-colors duration-300" id="nav-cta">Prenota</a>
       </nav>
       <button id="menu-toggle" class="md:hidden p-2 -mr-2" aria-label="Apri il menu di navigazione" aria-expanded="false" aria-controls="mobile-menu">
@@ -73,7 +135,7 @@
       <a href="../index.html#esperienze" class="mobile-link">Esperienze</a>
       <a href="../index.html#come-funziona" class="mobile-link">Come funziona</a>
       <a href="../index.html#galleria" class="mobile-link">Galleria</a>
-      <a href="../index.html#testimonianze" class="mobile-link">Testimonianze</a>
+      <a href="../index.html#come-funziona" class="mobile-link">Come funziona</a>
       <a href="../index.html#prenotazione" class="mobile-link font-medium">Prenota</a>
     </nav>
   </div>
@@ -83,12 +145,12 @@
 
 <section class="relative h-[56vh] min-h-[380px] flex items-end mt-20">
   <div class="absolute inset-0">
-    <img src="../assets/img/esperienza-anniversari-hero.webp" alt="Coppia che si tiene per mano a lume di candela durante una cena romantica" class="absolute inset-0 w-full h-full object-cover" />
+    <img src="../assets/img/esperienza-anniversari-hero.webp" width="2048" height="1367" decoding="async" fetchpriority="high" alt="Coppia che si tiene per mano a lume di candela durante una cena romantica" class="absolute inset-0 w-full h-full object-cover" />
     <div class="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent"></div>
   </div>
   <div class="relative max-w-content mx-auto w-full px-6 md:px-10 pb-12 text-white">
     <p class="text-xs text-white/70 mb-4"><a href="../index.html#esperienze" class="link-underline pb-1">Esperienze</a> / Anniversari</p>
-    <h1 class="font-display text-4xl md:text-5xl leading-tight mb-3">Anniversari</h1>
+    <h1 class="font-display text-4xl md:text-5xl leading-tight mb-3">Chef Privato per Anniversari</h1>
     <p class="text-base md:text-lg text-white/85 max-w-xl">Il tempo che passa, celebrato a tavola.</p>
   </div>
 </section>
@@ -97,14 +159,14 @@
   <div class="max-w-2xl space-y-6 text-[15px] md:text-base leading-relaxed text-ink/85 reveal">
     <p>Un anniversario — di matrimonio, di una relazione, o di un traguardo importante condiviso in due o in famiglia — ha un valore diverso da qualsiasi altra occasione: non festeggia un momento isolato, ma un percorso. È qualcosa che, nella mia esperienza, si sente anche a tavola: chi festeggia un anniversario cerca raramente lo stupore fine a se stesso, e più spesso un momento di calma, intimità, e qualcosa che assomigli a un ricordo condiviso più che a uno spettacolo.</p>
 
-    <h2 class="font-display text-2xl text-ink pt-4">Come si svolge</h2>
+    <h2 class="font-display text-2xl text-ink pt-4">Come si svolge una cena privata per il vostro anniversario</h2>
     <p>Per questo tipo di occasione lavoro spesso su un percorso che richiama la storia della coppia o della famiglia, quando è possibile: il piatto della prima cena insieme, una cucina legata a un viaggio importante, i sapori di una tradizione familiare. Non è un obbligo — molte coppie preferiscono semplicemente una cena elegante e distesa, senza narrazioni particolari — ma è un'opzione che rende l'esperienza più personale, ed è il motivo per cui ogni conversazione iniziale con me parte sempre da domande, non da un menù già pronto.</p>
     <p>Il ritmo della serata conta quanto il cibo: per un anniversario il servizio è pensato per essere lento, con pause naturali tra una portata e l'altra, senza la pressione di "liberare il tavolo" tipica di un ristorante. Cucino e servo io stesso, restando defilato quando la conversazione tra gli ospiti prende il sopravvento.</p>
 
-    <h2 class="font-display text-2xl text-ink pt-4">Per chi è pensata</h2>
+    <h2 class="font-display text-2xl text-ink pt-4">Per chi è pensato un anniversario con chef privato</h2>
     <p>È un'esperienza adatta sia a una cena per due, sia a un pranzo o una cena allargata a famiglia e amici più stretti per un anniversario importante — 10, 25, 50 anni — dove il numero di ospiti cresce ma l'intenzione resta la stessa: celebrare un legame che dura nel tempo. Per una sorpresa che culmina in un momento specifico, la pagina <a href="proposta-di-matrimonio.html" class="link-underline pb-0.5 text-ink">Proposte di Matrimonio</a> segue una logica simile e può essere utile come riferimento.</p>
 
-    <h2 class="font-display text-2xl text-ink pt-4">Cosa è incluso</h2>
+    <h2 class="font-display text-2xl text-ink pt-4">Cosa è incluso nel servizio per l'anniversario</h2>
     <ul class="space-y-2 list-none">
       <li class="flex gap-3"><span class="text-gold-deep">—</span> Menù con richiami facoltativi alla vostra storia condivisa</li>
       <li class="flex gap-3"><span class="text-gold-deep">—</span> Servizio dal ritmo lento, senza fretta tra le portate</li>
@@ -126,15 +188,15 @@
     <p class="eyebrow text-xs uppercase text-gold-deep mb-4 reveal">Altre esperienze</p>
     <div class="grid sm:grid-cols-3 gap-8">
       <a href="proposta-di-matrimonio.html" class="group reveal block">
-        <div class="aspect-[4/3] mb-4 rounded-sm overflow-hidden"><img src="../assets/img/esperienza-proposta-di-matrimonio.webp" alt="Tavola romantica apparecchiata su una terrazza vista lago al tramonto, petali di rosa" class="w-full h-full object-cover" /></div>
+        <div class="aspect-[4/3] mb-4 rounded-sm overflow-hidden"><img src="../assets/img/esperienza-proposta-di-matrimonio.webp" width="1054" height="745" decoding="async" loading="lazy" alt="Tavola romantica apparecchiata su una terrazza vista lago al tramonto, petali di rosa" class="w-full h-full object-cover" /></div>
         <h3 class="font-display text-lg group-hover:text-gold-deep transition-colors duration-300">Proposte di Matrimonio</h3>
       </a>
       <a href="cena-privata.html" class="group reveal block">
-        <div class="aspect-[4/3] mb-4 rounded-sm overflow-hidden"><img src="../assets/img/esperienza-cena-privata.png" alt="Tavola apparecchiata per una cena privata in villa, sera" class="w-full h-full object-cover" /></div>
+        <div class="aspect-[4/3] mb-4 rounded-sm overflow-hidden"><img src="../assets/img/esperienza-cena-privata.webp" width="1535" height="1024" decoding="async" loading="lazy" alt="Tavola apparecchiata per una cena privata in villa, sera" class="w-full h-full object-cover" /></div>
         <h3 class="font-display text-lg group-hover:text-gold-deep transition-colors duration-300">Cena Privata</h3>
       </a>
       <a href="chef-in-villa.html" class="group reveal block">
-        <div class="aspect-[4/3] mb-4 rounded-sm overflow-hidden"><img src="../assets/img/esperienza-chef-in-villa.webp" alt="Tavola apparecchiata a bordo piscina in villa al tramonto, con vista sulle colline" class="w-full h-full object-cover" /></div>
+        <div class="aspect-[4/3] mb-4 rounded-sm overflow-hidden"><img src="../assets/img/esperienza-chef-in-villa.webp" width="1537" height="1023" decoding="async" loading="lazy" alt="Tavola apparecchiata a bordo piscina in villa al tramonto, con vista sulle colline" class="w-full h-full object-cover" /></div>
         <h3 class="font-display text-lg group-hover:text-gold-deep transition-colors duration-300">Chef in Villa</h3>
       </a>
     </div>
@@ -150,7 +212,7 @@
       <a href="../index.html#chi-sono" class="link-underline pb-1">Chi sono</a>
       <a href="../index.html#esperienze" class="link-underline pb-1">Esperienze</a>
       <a href="../index.html#galleria" class="link-underline pb-1">Galleria</a>
-      <a href="../index.html#testimonianze" class="link-underline pb-1">Testimonianze</a>
+      <a href="../index.html#come-funziona" class="link-underline pb-1">Come funziona</a>
       <a href="../index.html#prenotazione" class="link-underline pb-1">Prenotazione</a>
     </nav>
     <div class="flex items-center gap-4">
@@ -162,7 +224,8 @@
       </a>
     </div>
   </div>
-  <p class="text-center text-xs text-ink/40 mt-8">© 2026 Chef Yuri. Tutti i diritti riservati.</p>
+  <p class="text-center text-xs text-ink/40 mt-2">Anniversari celebrati su richiesta a Roma, Viterbo e nel Lazio.</p>
+  <p class="text-center text-xs text-ink/40 mt-2">© 2026 Chef Yuri. Tutti i diritti riservati.</p>
 </footer>
 
 <!-- TODO: sostituire con il numero WhatsApp business reale prima del lancio -->

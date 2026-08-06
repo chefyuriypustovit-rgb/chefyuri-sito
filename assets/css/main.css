@@ -190,68 +190,6 @@ input:focus, textarea:focus, select:focus, a:focus-visible, button:focus-visible
 }
 
 /* ============================================================
-   PLACEHOLDER FOTOGRAFICI
-   Nessuna foto reale è ancora disponibile (vedi CONTENUTI-DA-COMPLETARE.md).
-   Trattamento intenzionale, tono-su-tono nella palette del brand,
-   chiaramente riconoscibile come segnaposto — non stock photo generica.
-   Sostituire ogni .ph-photo con una vera fotografia prima del lancio.
-   ============================================================ */
-.ph-photo {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background:
-    linear-gradient(135deg, rgba(198,166,100,0.16) 0%, rgba(20,33,24,0.05) 45%, rgba(28,28,26,0.08) 100%),
-    #EFEAE0;
-}
-.ph-photo::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: repeating-linear-gradient(135deg, rgba(28,28,26,0.03) 0px, rgba(28,28,26,0.03) 1px, transparent 1px, transparent 14px);
-}
-.ph-icon {
-  width: 30px;
-  height: 30px;
-  color: rgba(28,28,26,0.28);
-  position: relative;
-  z-index: 1;
-}
-.ph-caption {
-  position: absolute;
-  left: 12px;
-  bottom: 12px;
-  z-index: 1;
-  font-size: 10.5px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(28,28,26,0.62);
-  background: rgba(250,248,243,0.78);
-  padding: 5px 11px;
-  border-radius: 999px;
-  backdrop-filter: blur(4px);
-  white-space: nowrap;
-}
-.ph-photo--dark {
-  background:
-    linear-gradient(135deg, rgba(198,166,100,0.14) 0%, rgba(250,248,243,0.04) 45%, rgba(250,248,243,0.03) 100%),
-    #1B2A20;
-}
-.ph-photo--dark::before {
-  background-image: repeating-linear-gradient(135deg, rgba(250,248,243,0.04) 0px, rgba(250,248,243,0.04) 1px, transparent 1px, transparent 14px);
-}
-.ph-photo--dark .ph-icon { color: rgba(250,248,243,0.32); }
-.ph-photo--dark .ph-caption {
-  color: rgba(250,248,243,0.75);
-  background: rgba(28,28,26,0.55);
-}
-
-/* Statistiche "in aggiornamento" — numeri reali da confermare (brief §3.6) */
-.stat-pending { font-variant-numeric: tabular-nums; }
-
-/* ============================================================
    PULSANTI FLOTTANTI (WhatsApp + torna su)
    Fissi in basso a destra, visibili durante lo scroll su ogni pagina.
    ============================================================ */

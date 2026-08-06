@@ -3,68 +3,112 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Chef Yuri — Personal Chef | Esperienze gastronomiche private</title>
-<meta name="description" content="Chef Yuri porta la cucina d'autore nella privacy di casa vostra: cene private, chef in villa, cooking class, eventi esclusivi. Un'esperienza, non un servizio." />
+<title>Chef Privato a Domicilio | Chef Yuri — Personal Chef</title>
+<meta name="description" content="Chef privato e personal chef tra Lazio, Viterbo, Umbria e Toscana: cene private, chef in villa, cooking class ed eventi esclusivi nella privacy di casa vostra." />
 <link rel="canonical" href="https://chefyuriypustovit.com/" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Chef Yuri — Personal Chef" />
-<meta property="og:description" content="Cucina d'autore nella privacy di casa vostra. Cene private, chef in villa, cooking class, eventi esclusivi." />
+<meta property="og:title" content="Chef Privato a Domicilio | Chef Yuri" />
+<meta property="og:description" content="Chef privato e personal chef tra Lazio, Viterbo, Umbria e Toscana: cene private, chef in villa, cooking class, eventi esclusivi." />
 <meta property="og:url" content="https://chefyuriypustovit.com/" />
 <meta property="og:image" content="https://chefyuriypustovit.com/assets/img/hero-chef-privato.webp" />
 <meta property="og:image:width" content="1915" />
 <meta property="og:image:height" content="821" />
 <meta property="og:locale" content="it_IT" />
+<meta property="og:site_name" content="Chef Yuri — Personal Chef" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Chef Privato a Domicilio | Chef Yuri" />
+<meta name="twitter:description" content="Chef privato e personal chef tra Lazio, Viterbo, Umbria e Toscana: cene private, chef in villa, cooking class, eventi esclusivi." />
+<meta name="twitter:image" content="https://chefyuriypustovit.com/assets/img/hero-chef-privato.webp" />
+
+<link rel="alternate" hreflang="it-IT" href="https://chefyuriypustovit.com/" />
+<link rel="alternate" hreflang="x-default" href="https://chefyuriypustovit.com/" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<!-- Precarico le 6 foto del cubo galleria: niente flash vuoto alla prima rotazione -->
-<link rel="preload" as="image" href="assets/img/galleria-mise-en-place.webp">
-<link rel="preload" as="image" href="assets/img/galleria-tecnica.jpeg">
-<link rel="preload" as="image" href="assets/img/galleria-dettaglio-impiattamento.webp">
-<link rel="preload" as="image" href="assets/img/galleria-tavola-apparecchiata.png">
-<link rel="preload" as="image" href="assets/img/galleria-piatto-signature.png">
-<link rel="preload" as="image" href="assets/img/galleria-brindisi.webp">
+<!-- Precarico solo il vero elemento LCP della pagina (hero a piena viewport).
+     Le 6 foto della galleria ora si caricano on-demand quando la sezione entra
+     in viewport (vedi main.js) — precaricarle qui avrebbe sottratto banda
+     all'immagine che determina davvero il Largest Contentful Paint. -->
+<link rel="preload" as="image" href="assets/img/hero-chef-privato.webp" fetchpriority="high">
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          cream: '#FAF8F3',
-          ink: '#1C1C1A',
-          forest: '#142118',
-          gold: '#C6A664',
-          'gold-deep': '#8C6B34',
-          line: '#E7E2D5',
-        },
-        fontFamily: {
-          serif: ['Fraunces', 'serif'],
-          sans: ['Inter', 'sans-serif'],
-        },
-        maxWidth: {
-          'content': '1240px',
-        },
-      },
-    },
-  }
-</script>
+<link rel="stylesheet" href="assets/css/tailwind.css">
 <link rel="stylesheet" href="assets/css/main.css">
 
-<!-- SEO: dati strutturati minimi e veritieri. Non aggiungere aggregateRating/review
+<!-- SEO: dati strutturati veritieri. Non aggiungere aggregateRating/review
      finché non esistono recensioni reali verificabili (vedi CONTENUTI-DA-COMPLETARE.md). -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FoodEstablishment",
-  "name": "Chef Yuri — Personal Chef",
-  "description": "Servizio di chef privato per cene private, chef in villa, cooking class ed eventi esclusivi.",
-  "url": "https://chefyuriypustovit.com/",
-  "areaServed": "IT",
-  "priceRange": "$$$$"
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://chefyuriypustovit.com/#business",
+      "name": "Chef Yuri — Personal Chef",
+      "alternateName": "Chef Privato Yuriy Pustovit",
+      "description": "Servizio di chef privato a domicilio per cene private, chef in villa, cooking class ed eventi esclusivi tra Lazio, Tuscia, Viterbo, Umbria e Toscana.",
+      "url": "https://chefyuriypustovit.com/",
+      "image": "https://chefyuriypustovit.com/assets/img/hero-chef-privato.webp",
+      "priceRange": "€€€€",
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Lazio" },
+        { "@type": "AdministrativeArea", "name": "Umbria" },
+        { "@type": "AdministrativeArea", "name": "Toscana" },
+        { "@type": "City", "name": "Viterbo" },
+        { "@type": "City", "name": "Roma" }
+      ],
+      "founder": { "@id": "https://chefyuriypustovit.com/#person" },
+      "employee": { "@id": "https://chefyuriypustovit.com/#person" },
+      "availableLanguage": ["Italian"],
+      "sameAs": ["https://instagram.com/chefyuri"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Esperienze di Chef Privato",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cena Privata a Domicilio", "url": "https://chefyuriypustovit.com/esperienze/cena-privata.html" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chef in Villa", "url": "https://chefyuriypustovit.com/esperienze/chef-in-villa.html" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cooking Class Privata", "url": "https://chefyuriypustovit.com/esperienze/cooking-class.html" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chef per Eventi Aziendali", "url": "https://chefyuriypustovit.com/esperienze/eventi-aziendali.html" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chef per Compleanni", "url": "https://chefyuriypustovit.com/esperienze/compleanni.html" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chef per Anniversari", "url": "https://chefyuriypustovit.com/esperienze/anniversari.html" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chef per Proposte di Matrimonio", "url": "https://chefyuriypustovit.com/esperienze/proposta-di-matrimonio.html" } }
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://chefyuriypustovit.com/#person",
+      "name": "Yuriy Pustovit",
+      "alternateName": "Chef Yuri",
+      "jobTitle": "Personal Chef / Chef Privato",
+      "description": "Chef privato con oltre 12 anni di esperienza nella ristorazione professionale, specializzato in cene private, chef in villa ed eventi esclusivi tra Lazio, Umbria e Toscana.",
+      "url": "https://chefyuriypustovit.com/",
+      "knowsAbout": ["Cucina italiana", "Fine dining", "Cucina di stagione", "Ospitalità privata", "Eventi gastronomici privati"],
+      "worksFor": { "@id": "https://chefyuriypustovit.com/#business" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://chefyuriypustovit.com/#website",
+      "name": "Chef Yuri — Personal Chef",
+      "url": "https://chefyuriypustovit.com/",
+      "publisher": { "@id": "https://chefyuriypustovit.com/#business" },
+      "inLanguage": "it-IT"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://chefyuriypustovit.com/#webpage",
+      "url": "https://chefyuriypustovit.com/",
+      "name": "Chef Privato a Domicilio | Chef Yuri — Personal Chef",
+      "isPartOf": { "@id": "https://chefyuriypustovit.com/#website" },
+      "about": { "@id": "https://chefyuriypustovit.com/#business" },
+      "mainEntity": { "@id": "https://chefyuriypustovit.com/#business" },
+      "inLanguage": "it-IT"
+    }
+  ]
 }
 </script>
 </head>
@@ -78,7 +122,7 @@
   <div class="max-w-content mx-auto px-6 md:px-10">
     <div class="flex items-center justify-between h-20">
       <a href="#top" class="block ml-16 md:ml-32 transition-[filter] duration-300" id="nav-logo" aria-label="Chef Yuri Pustovit — torna alla home">
-        <img src="assets/img/signature.png" alt="chef-privato-Yuriy Pustovit" class="h-14 md:h-[4.25rem] w-auto" />
+        <img src="assets/img/signature.webp" width="1714" height="491" decoding="async" alt="Yuriy Pustovit, chef privato — firma" class="h-14 md:h-[4.25rem] w-auto" />
       </a>
 
       <nav class="hidden md:flex items-center gap-9 text-sm" id="nav-links" aria-label="Navigazione principale">
@@ -118,7 +162,7 @@
        <video autoplay muted loop playsinline> a piena pagina — non serve
        modificare il resto della sezione. -->
   <div id="hero-media" class="absolute inset-0 overflow-hidden">
-    <img src="assets/img/hero-chef-privato.webp" alt="Chef Yuri prepara un piatto di pasta in una cucina privata con vista sul lago" class="absolute inset-0 w-full h-full object-cover object-[22%_center] md:object-center" />
+    <img src="assets/img/hero-chef-privato.webp" width="1915" height="821" decoding="async" fetchpriority="high" alt="Chef privato Yuri prepara un piatto di pasta in una cucina privata con vista sul lago" class="absolute inset-0 w-full h-full object-cover object-[22%_center] md:object-center" />
     <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/25 to-ink/10"></div>
   </div>
 
@@ -127,7 +171,7 @@
       <div class="w-fit">
         <div class="inline-flex items-center gap-2 w-fit rounded-full border border-white/15 bg-ink/45 backdrop-blur px-4 py-1.5 reveal">
           <span class="h-1.5 w-1.5 rounded-full bg-gold shrink-0"></span>
-          <p class="eyebrow text-xs md:text-sm text-gold uppercase">Personal Chef · Lazio, Tuscia, Toscana e Umbria</p>
+          <p class="eyebrow text-xs md:text-sm text-gold uppercase">Chef Privato · Personal Chef · Lazio, Tuscia, Toscana e Umbria</p>
         </div>
         <div class="w-full h-[2px] bg-gold mt-2"></div>
       </div>
@@ -142,7 +186,7 @@
       Ogni cena nasce per una sola tavola.<br class="hidden sm:block"> La tua.
     </h1>
     <p class="text-base md:text-lg text-white/85 max-w-xl mb-10 reveal">
-      <img src="assets/img/signature-chef-yuriy-pustovit-bold.png" alt="Chef Yuriy Pustovit" class="inline-block h-[2.6em] w-auto align-[-0.75em] invert" /> porta la cucina d'autore nella privacy di casa vostra, tra Lazio, Tuscia, Toscana e Umbria — per chi cerca un momento su misura, non un servizio.
+      Chef privato e personal chef, <img src="assets/img/signature-chef-yuriy-pustovit-bold.webp" width="1714" height="491" decoding="async" alt="Chef Yuriy Pustovit" class="inline-block h-[2.6em] w-auto align-[-0.75em] invert" /> porta la cucina d'autore nella privacy di casa vostra, tra Lazio, Tuscia, Toscana e Umbria — per chi cerca un momento su misura, non un servizio.
     </p>
     <div class="reveal">
       <a href="#prenotazione" class="inline-flex items-center justify-center rounded-full bg-white text-ink px-7 py-3.5 text-sm font-medium border border-white hover:bg-transparent hover:text-white transition-colors duration-300">
@@ -163,7 +207,7 @@
 <!-- 2. CHI SONO -->
 <section id="chi-sono" class="scroll-mt-20">
   <div class="relative h-[100dvh] min-h-[600px] overflow-hidden">
-    <video src="assets/video/chi-sono-impiattamento.mp4" poster="assets/img/chi-sono.png" autoplay muted loop playsinline preload="auto" aria-label="chef-privato-viterbo-impiattamento" class="absolute inset-0 w-full h-full object-cover"></video>
+    <video id="chi-sono-video" src="assets/video/chi-sono-impiattamento.mp4" poster="assets/img/chi-sono.webp" width="1086" height="1448" muted loop playsinline preload="metadata" aria-label="Chef privato al lavoro: rifinitura di un piatto in cucina" class="absolute inset-0 w-full h-full object-cover"></video>
     <div class="absolute inset-0 bg-black/30"></div>
     <div class="absolute inset-0 flex items-center justify-center px-6">
       <div class="max-w-2xl text-center reveal">
@@ -202,7 +246,7 @@
 
     <div class="reveal reveal-signature flex items-center justify-center gap-2 text-ink/50">
       <span class="font-display italic text-sm">—</span>
-      <img src="assets/img/signature.png" alt="Chef Yuriy Pustovit" class="h-16 md:h-20 w-auto opacity-100" />
+      <img src="assets/img/signature.webp" width="1714" height="491" decoding="async" loading="lazy" alt="Chef Yuriy Pustovit" class="h-16 md:h-20 w-auto opacity-100" />
     </div>
   </div>
 </section>
@@ -229,7 +273,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-6 md:auto-rows-[240px] gap-6 md:gap-8">
       <a href="esperienze/cena-privata.html" class="exp-card reveal reveal-x-left group relative flex flex-col justify-end overflow-hidden rounded-[clamp(16px,5vw,32px)] aspect-[4/5] md:aspect-auto md:col-span-4 md:row-span-2">
-        <img src="assets/img/esperienza-cena-privata.png" alt="Tavola apparecchiata per una cena privata in villa, sera" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[400ms] ease-out group-hover:scale-105" />
+        <img src="assets/img/esperienza-cena-privata.webp" width="1535" height="1024" decoding="async" loading="lazy" alt="Tavola apparecchiata per una cena privata in villa, sera" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[400ms] ease-out group-hover:scale-105" />
         <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/20 to-transparent"></div>
         <div class="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors duration-[400ms] ease-out"></div>
         <div class="relative z-10 p-6 md:p-9 transition-transform duration-[400ms] ease-out group-hover:-translate-y-1.5">
@@ -240,7 +284,7 @@
       </a>
 
       <a href="esperienze/chef-in-villa.html" class="exp-card reveal reveal-x-right reveal-d1 group relative flex flex-col justify-end overflow-hidden rounded-[clamp(16px,5vw,32px)] aspect-[4/5] md:aspect-auto md:col-span-2 md:row-span-2">
-        <img src="assets/img/esperienza-chef-in-villa.webp" alt="Tavola apparecchiata a bordo piscina in villa al tramonto, con vista sulle colline" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[400ms] ease-out group-hover:scale-105" />
+        <img src="assets/img/esperienza-chef-in-villa.webp" width="1537" height="1023" decoding="async" loading="lazy" alt="Tavola apparecchiata a bordo piscina in villa al tramonto, con vista sulle colline" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[400ms] ease-out group-hover:scale-105" />
         <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/20 to-transparent"></div>
         <div class="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors duration-[400ms] ease-out"></div>
         <div class="relative z-10 p-6 md:p-7 transition-transform duration-[400ms] ease-out group-hover:-translate-y-1.5">
@@ -251,7 +295,7 @@
       </a>
 
       <a href="esperienze/cooking-class.html" class="exp-card reveal reveal-x-left reveal-d2 group relative flex flex-col justify-end overflow-hidden rounded-[clamp(16px,5vw,32px)] aspect-[4/3] md:aspect-auto md:col-span-2">
-        <img src="assets/img/esperienza-cooking-class.png" alt="Preparazione di ravioli freschi fatti a mano" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[400ms] ease-out group-hover:scale-105" />
+        <img src="assets/img/esperienza-cooking-class.webp" width="1448" height="1086" decoding="async" loading="lazy" alt="Preparazione di ravioli freschi fatti a mano" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[400ms] ease-out group-hover:scale-105" />
         <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/20 to-transparent"></div>
         <div class="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors duration-[400ms] ease-out"></div>
         <div class="relative z-10 p-5 md:p-6 transition-transform duration-[400ms] ease-out group-hover:-translate-y-1.5">
@@ -262,7 +306,7 @@
       </a>
 
       <a href="esperienze/eventi-aziendali.html" class="exp-card reveal reveal-x-right reveal-d3 group relative flex flex-col justify-end overflow-hidden rounded-[clamp(16px,5vw,32px)] aspect-[4/3] md:aspect-auto md:col-span-2">
-        <img src="assets/img/esperienza-eventi-aziendali.webp" alt="Selezione di finger food e stuzzichini per un evento aziendale" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[400ms] ease-out group-hover:scale-105" />
+        <img src="assets/img/esperienza-eventi-aziendali.webp" width="2480" height="1120" decoding="async" loading="lazy" alt="Selezione di finger food e stuzzichini per un evento aziendale" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[400ms] ease-out group-hover:scale-105" />
         <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/20 to-transparent"></div>
         <div class="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors duration-[400ms] ease-out"></div>
         <div class="relative z-10 p-5 md:p-6 transition-transform duration-[400ms] ease-out group-hover:-translate-y-1.5">
@@ -273,7 +317,7 @@
       </a>
 
       <a href="esperienze/proposta-di-matrimonio.html" class="exp-card reveal reveal-x-left reveal-d4 group relative flex flex-col justify-end overflow-hidden rounded-[clamp(16px,5vw,32px)] aspect-[4/3] md:aspect-auto md:col-span-2">
-        <img src="assets/img/esperienza-proposta-di-matrimonio.webp" alt="Tavola romantica apparecchiata su una terrazza vista lago al tramonto, petali di rosa" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[400ms] ease-out group-hover:scale-105" />
+        <img src="assets/img/esperienza-proposta-di-matrimonio.webp" width="1054" height="745" decoding="async" loading="lazy" alt="Tavola romantica apparecchiata su una terrazza vista lago al tramonto, petali di rosa" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[400ms] ease-out group-hover:scale-105" />
         <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/20 to-transparent"></div>
         <div class="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors duration-[400ms] ease-out"></div>
         <div class="relative z-10 p-5 md:p-6 transition-transform duration-[400ms] ease-out group-hover:-translate-y-1.5">
@@ -284,7 +328,7 @@
       </a>
 
       <a href="esperienze/compleanni.html" class="exp-card reveal reveal-x-right reveal-d5 group relative flex flex-col justify-end overflow-hidden rounded-[clamp(16px,5vw,32px)] aspect-[4/3] md:aspect-auto md:col-span-3">
-        <img src="assets/img/esperienza-compleanni.webp" alt="Amici che brindano insieme a una lunga tavolata imbandita" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[400ms] ease-out group-hover:scale-105" />
+        <img src="assets/img/esperienza-compleanni.webp" width="1500" height="1992" decoding="async" loading="lazy" alt="Amici che brindano insieme a una lunga tavolata imbandita" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[400ms] ease-out group-hover:scale-105" />
         <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/20 to-transparent"></div>
         <div class="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors duration-[400ms] ease-out"></div>
         <div class="relative z-10 p-5 md:p-6 transition-transform duration-[400ms] ease-out group-hover:-translate-y-1.5">
@@ -295,7 +339,7 @@
       </a>
 
       <a href="esperienze/anniversari.html" class="exp-card reveal reveal-x-left reveal-d6 group relative flex flex-col justify-end overflow-hidden rounded-[clamp(16px,5vw,32px)] aspect-[4/3] md:aspect-auto md:col-span-3">
-        <img src="assets/img/esperienza-anniversari.webp" alt="Una coppia si tiene per mano a una cena romantica a lume di candela" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[400ms] ease-out group-hover:scale-105" />
+        <img src="assets/img/esperienza-anniversari.webp" width="2048" height="1367" decoding="async" loading="lazy" alt="Una coppia si tiene per mano a una cena romantica a lume di candela" class="absolute inset-0 w-full h-full object-cover transition-transform duration-[400ms] ease-out group-hover:scale-105" />
         <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/20 to-transparent"></div>
         <div class="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors duration-[400ms] ease-out"></div>
         <div class="relative z-10 p-5 md:p-6 transition-transform duration-[400ms] ease-out group-hover:-translate-y-1.5">
@@ -361,12 +405,12 @@
   <div class="full-bleed relative">
     <div class="ring-stage">
       <div class="ring" id="gallery-ring" role="group" aria-roledescription="carosello" aria-label="Galleria fotografica ad anello">
-        <div class="panel" style="background-image:url('assets/img/galleria-mise-en-place.webp')" role="img" aria-label="Ingredienti selezionati disposti su un tavolo di legno"></div>
-        <div class="panel" style="background-image:url('assets/img/galleria-tecnica.jpeg')" role="img" aria-label="Preparazione: chef nappa una tartare alla griglia con succo di limone"></div>
-        <div class="panel" style="background-image:url('assets/img/galleria-dettaglio-impiattamento.webp')" role="img" aria-label="Impiattamento: rifinitura del piatto con fior di sale"></div>
-        <div class="panel" style="background-image:url('assets/img/galleria-tavola-apparecchiata.png')" role="img" aria-label="Tavola apparecchiata: fila di piatti raffinati pronti per il servizio"></div>
-        <div class="panel" style="background-image:url('assets/img/galleria-piatto-signature.png')" role="img" aria-label="Dettaglio piatto signature: spaghetti con vongole e cozze"></div>
-        <div class="panel" style="background-image:url('assets/img/galleria-brindisi.webp')" role="img" aria-label="Ospiti: calici di vino che si toccano a tavola in un'atmosfera calda e conviviale"></div>
+        <div class="panel" data-bg="assets/img/galleria-mise-en-place.webp" role="img" aria-label="Ingredienti selezionati disposti su un tavolo di legno"></div>
+        <div class="panel" data-bg="assets/img/galleria-tecnica.jpeg" role="img" aria-label="Preparazione: chef nappa una tartare alla griglia con succo di limone"></div>
+        <div class="panel" data-bg="assets/img/galleria-dettaglio-impiattamento.webp" role="img" aria-label="Impiattamento: rifinitura del piatto con fior di sale"></div>
+        <div class="panel" data-bg="assets/img/galleria-tavola-apparecchiata.webp" role="img" aria-label="Tavola apparecchiata: fila di piatti raffinati pronti per il servizio"></div>
+        <div class="panel" data-bg="assets/img/galleria-piatto-signature.webp" role="img" aria-label="Dettaglio piatto signature: spaghetti con vongole e cozze"></div>
+        <div class="panel" data-bg="assets/img/galleria-brindisi.webp" role="img" aria-label="Ospiti: calici di vino che si toccano a tavola in un'atmosfera calda e conviviale"></div>
       </div>
 
       <button type="button" id="ring-prev" class="ring-arrow ring-arrow--prev" aria-label="Foto precedente">
@@ -528,7 +572,7 @@
 <!-- 8. CTA FINALE -->
 <section id="cta-finale" class="relative py-40 md:py-56 flex items-center justify-center text-center overflow-hidden">
   <div class="absolute inset-0">
-    <img src="assets/img/galleria-brindisi.webp" alt="Calici di vino che si toccano a tavola in un'atmosfera calda e conviviale" class="absolute inset-0 w-full h-full object-cover object-[50%_20%]" />
+    <img src="assets/img/galleria-brindisi.webp" width="1200" height="900" decoding="async" loading="lazy" alt="Calici di vino che si toccano a tavola in un'atmosfera calda e conviviale" class="absolute inset-0 w-full h-full object-cover object-[50%_20%]" />
     <div class="absolute inset-0 bg-ink/55"></div>
   </div>
   <div class="relative max-w-2xl mx-auto px-6 reveal">
@@ -562,7 +606,8 @@
       </a>
     </div>
   </div>
-  <p class="text-center text-xs text-ink/40 mt-8">© 2026 Chef Yuri. Tutti i diritti riservati.</p>
+  <p class="text-center text-xs text-ink/40 mt-2">Chef privato attivo tra Lazio, Umbria e Toscana, su richiesta anche fuori regione.</p>
+  <p class="text-center text-xs text-ink/40 mt-2">© 2026 Chef Yuri. Tutti i diritti riservati.</p>
 </footer>
 
 <!-- TODO: sostituire con il numero WhatsApp business reale prima del lancio -->

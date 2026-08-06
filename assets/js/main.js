@@ -66,6 +66,48 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach(el => io.observe(el));
   }
 
+  /* --- Video "Chi sono": play/pause guidati da IntersectionObserver ---
+       Niente autoplay statico nell'HTML: il video (poster="chi-sono.webp",
+       preload="metadata") inizia a riprodursi solo quando la sezione entra
+       in viewport e si ferma quando l'utente scorre via, invece di scaricare
+       subito l'intero file al caricamento della pagina. */
+  const chiSonoVideo = document.getElementById('chi-sono-video');
+  if (chiSonoVideo) {
+    const videoIo = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          chiSonoVideo.play().catch(() => {});
+        } else {
+          chiSonoVideo.pause();
+        }
+      });
+    }, { threshold: 0.35 });
+    videoIo.observe(chiSonoVideo);
+  }
+
+  /* --- Galleria: caricamento differito delle 6 immagini di sfondo ---
+       Gli sfondi sono in data-bg invece che in style inline: vengono
+       impostati solo quando la sezione galleria si avvicina al viewport
+       (rootMargin anticipa il caricamento per evitare un flash vuoto alla
+       prima rotazione), invece di essere scaricati subito all'apertura
+       della pagina insieme all'immagine hero. */
+  const galleriaSection = document.getElementById('galleria');
+  const bgPanels = document.querySelectorAll('.panel[data-bg]');
+  if (galleriaSection && bgPanels.length) {
+    const loadPanels = () => {
+      bgPanels.forEach(p => { p.style.backgroundImage = `url('${p.dataset.bg}')`; });
+    };
+    const bgIo = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          loadPanels();
+          bgIo.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '600px 0px' });
+    bgIo.observe(galleriaSection);
+  }
+
   /* --- Galleria: carosello 3D ad anello ---
        Stessa interazione su desktop e mobile, nessuno scroll-jacking: l'anello ruota
        SOLO trascinando orizzontalmente sopra .ring-stage (pointerdown/move/up), lo

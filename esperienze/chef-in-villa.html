@@ -3,45 +3,107 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Chef in Villa | Chef Yuri — Personal Chef</title>
-<meta name="description" content="Chef privato per l'intero soggiorno in villa: colazioni, pranzi e cene su misura, spesa quotidiana e servizio completo. Chef Yuri, personal chef." />
+<title>Chef in Villa in Toscana e Umbria | Chef Yuri</title>
+<meta name="description" content="Chef privato per l'intero soggiorno in villa, tra Toscana e Umbria: colazioni, pranzi e cene su misura, spesa quotidiana e servizio completo." />
 <link rel="canonical" href="https://chefyuriypustovit.com/esperienze/chef-in-villa.html" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Chef in Villa | Chef Yuri" />
-<meta property="og:description" content="Chef privato per l'intero soggiorno in villa: colazioni, pranzi e cene su misura, servizio continuativo." />
+<meta property="og:title" content="Chef in Villa in Toscana e Umbria | Chef Yuri" />
+<meta property="og:description" content="Chef privato per l'intero soggiorno in villa, tra Toscana e Umbria: colazioni, pranzi e cene su misura, servizio continuativo." />
 <meta property="og:url" content="https://chefyuriypustovit.com/esperienze/chef-in-villa.html" />
 <meta property="og:image" content="https://chefyuriypustovit.com/assets/img/esperienza-chef-in-villa-hero.webp" />
 <meta property="og:image:width" content="1537" />
 <meta property="og:image:height" content="1023" />
 <meta property="og:locale" content="it_IT" />
+<meta property="og:site_name" content="Chef Yuri — Personal Chef" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Chef in Villa in Toscana e Umbria | Chef Yuri" />
+<meta name="twitter:description" content="Chef privato per l'intero soggiorno in villa, tra Toscana e Umbria: colazioni, pranzi e cene su misura, servizio continuativo." />
+<meta name="twitter:image" content="https://chefyuriypustovit.com/assets/img/esperienza-chef-in-villa-hero.webp" />
+
+<link rel="alternate" hreflang="it-IT" href="https://chefyuriypustovit.com/esperienze/chef-in-villa.html" />
+<link rel="alternate" hreflang="x-default" href="https://chefyuriypustovit.com/esperienze/chef-in-villa.html" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: { cream: '#FAF8F3', ink: '#1C1C1A', forest: '#142118', gold: '#C6A664', 'gold-deep': '#8C6B34', line: '#E7E2D5' },
-        fontFamily: { serif: ['Fraunces', 'serif'], sans: ['Inter', 'sans-serif'] },
-        maxWidth: { 'content': '1240px' },
-      },
-    },
-  }
-</script>
+<!-- Precarico il vero elemento LCP: l'immagine hero a piena larghezza -->
+<link rel="preload" as="image" href="../assets/img/esperienza-chef-in-villa-hero.webp" fetchpriority="high">
+
+<link rel="stylesheet" href="../assets/css/tailwind.css">
 <link rel="stylesheet" href="../assets/css/main.css">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "Chef privato per soggiorni in villa",
-  "name": "Chef in Villa — Chef Yuri",
-  "description": "Servizio continuativo di chef privato per l'intero soggiorno in villa: colazioni, pranzi e cene su misura.",
-  "provider": { "@type": "Person", "name": "Chef Yuri" },
-  "areaServed": "IT"
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://chefyuriypustovit.com/#business",
+      "name": "Chef Yuri — Personal Chef",
+      "alternateName": "Chef Privato Yuriy Pustovit",
+      "url": "https://chefyuriypustovit.com/",
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Lazio" },
+        { "@type": "AdministrativeArea", "name": "Umbria" },
+        { "@type": "AdministrativeArea", "name": "Toscana" },
+        { "@type": "City", "name": "Viterbo" },
+        { "@type": "City", "name": "Roma" }
+      ],
+      "founder": { "@id": "https://chefyuriypustovit.com/#person" },
+      "employee": { "@id": "https://chefyuriypustovit.com/#person" },
+      "availableLanguage": ["Italian"],
+      "sameAs": ["https://instagram.com/chefyuri"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://chefyuriypustovit.com/#person",
+      "name": "Yuriy Pustovit",
+      "alternateName": "Chef Yuri",
+      "jobTitle": "Personal Chef / Chef Privato",
+      "knowsAbout": ["Cucina italiana", "Fine dining", "Cucina di stagione", "Ospitalità privata", "Eventi gastronomici privati"],
+      "worksFor": { "@id": "https://chefyuriypustovit.com/#business" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://chefyuriypustovit.com/#website",
+      "name": "Chef Yuri — Personal Chef",
+      "url": "https://chefyuriypustovit.com/",
+      "publisher": { "@id": "https://chefyuriypustovit.com/#business" },
+      "inLanguage": "it-IT"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://chefyuriypustovit.com/esperienze/chef-in-villa.html#service",
+      "serviceType": "Chef privato per soggiorni in villa",
+      "name": "Chef in Villa — Chef Yuri",
+      "description": "Servizio continuativo di chef privato per l'intero soggiorno in villa: colazioni, pranzi e cene su misura.",
+      "provider": { "@id": "https://chefyuriypustovit.com/#business" },
+      "areaServed": ["Toscana", "Umbria", "Lazio"]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://chefyuriypustovit.com/esperienze/chef-in-villa.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://chefyuriypustovit.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Esperienze", "item": "https://chefyuriypustovit.com/#esperienze" },
+        { "@type": "ListItem", "position": 3, "name": "Chef in Villa", "item": "https://chefyuriypustovit.com/esperienze/chef-in-villa.html" }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://chefyuriypustovit.com/esperienze/chef-in-villa.html#webpage",
+      "url": "https://chefyuriypustovit.com/esperienze/chef-in-villa.html",
+      "name": "Chef in Villa in Toscana e Umbria | Chef Yuri",
+      "isPartOf": { "@id": "https://chefyuriypustovit.com/#website" },
+      "about": { "@id": "https://chefyuriypustovit.com/esperienze/chef-in-villa.html#service" },
+      "mainEntity": { "@id": "https://chefyuriypustovit.com/esperienze/chef-in-villa.html#service" },
+      "breadcrumb": { "@id": "https://chefyuriypustovit.com/esperienze/chef-in-villa.html#breadcrumb" },
+      "inLanguage": "it-IT"
+    }
+  ]
 }
 </script>
 </head>
@@ -58,7 +120,7 @@
         <a href="../index.html#chi-sono" class="link-underline pb-1 text-ink">Chi sono</a>
         <a href="../index.html#esperienze" class="link-underline pb-1 text-ink">Esperienze</a>
         <a href="../index.html#galleria" class="link-underline pb-1 text-ink">Galleria</a>
-        <a href="../index.html#testimonianze" class="link-underline pb-1 text-ink">Testimonianze</a>
+        <a href="../index.html#come-funziona" class="link-underline pb-1 text-ink">Come funziona</a>
         <a href="../index.html#prenotazione" class="inline-flex items-center rounded-full border border-ink text-ink px-5 py-2 text-sm hover:bg-ink hover:text-white transition-colors duration-300" id="nav-cta">Prenota</a>
       </nav>
       <button id="menu-toggle" class="md:hidden p-2 -mr-2" aria-label="Apri il menu di navigazione" aria-expanded="false" aria-controls="mobile-menu">
@@ -73,7 +135,7 @@
       <a href="../index.html#esperienze" class="mobile-link">Esperienze</a>
       <a href="../index.html#come-funziona" class="mobile-link">Come funziona</a>
       <a href="../index.html#galleria" class="mobile-link">Galleria</a>
-      <a href="../index.html#testimonianze" class="mobile-link">Testimonianze</a>
+      <a href="../index.html#come-funziona" class="mobile-link">Come funziona</a>
       <a href="../index.html#prenotazione" class="mobile-link font-medium">Prenota</a>
     </nav>
   </div>
@@ -83,7 +145,7 @@
 
 <section class="relative h-[56vh] min-h-[380px] flex items-end mt-20">
   <div class="absolute inset-0">
-    <img src="../assets/img/esperienza-chef-in-villa-hero.webp" alt="Tavola apparecchiata a bordo piscina in villa al tramonto, con vista sulle colline" class="absolute inset-0 w-full h-full object-cover object-[center_80%]" />
+    <img src="../assets/img/esperienza-chef-in-villa-hero.webp" width="1537" height="1023" decoding="async" fetchpriority="high" alt="Tavola apparecchiata a bordo piscina in villa al tramonto, con vista sulle colline" class="absolute inset-0 w-full h-full object-cover object-[center_80%]" />
     <div class="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent"></div>
   </div>
   <div class="relative max-w-content mx-auto w-full px-6 md:px-10 pb-12 text-white">
@@ -95,16 +157,16 @@
 
 <article class="max-w-content mx-auto px-6 md:px-10 py-20 md:py-28">
   <div class="max-w-2xl space-y-6 text-[15px] md:text-base leading-relaxed text-ink/85 reveal">
-    <p>Chi soggiorna in villa per una settimana, un weekend lungo o l'intera estate, spesso si scontra con lo stesso problema: la cucina è la stanza più bella della casa, ma nessuno vuole passarci le vacanze. Il servizio di chef in villa nasce per risolvere esattamente questo.</p>
+    <p>Chi soggiorna in una villa in Toscana, in Umbria o nel Lazio per una settimana, un weekend lungo o l'intera estate, spesso si scontra con lo stesso problema: la cucina è la stanza più bella della casa, ma nessuno vuole passarci le vacanze. Il servizio di chef privato in villa nasce per risolvere esattamente questo.</p>
 
-    <h2 class="font-display text-2xl text-ink pt-4">Come si svolge</h2>
+    <h2 class="font-display text-2xl text-ink pt-4">Come si svolge il servizio di chef in villa</h2>
     <p>Non si tratta di una cena isolata, ma di una presenza continuativa: colazioni, pranzi, cene o solo alcuni di questi pasti, in base a cosa serve al gruppo. Prima dell'arrivo definiamo insieme un piano — quali pasti coprire, quante persone, eventuali ospiti che si aggiungono per una sera, allergie e preferenze di ciascuno. Il menù non è fisso: si adatta giorno per giorno, tenendo conto di cosa offre il mercato locale e di cosa il gruppo desidera davvero, senza ripetizioni e senza la rigidità di un catering standard.</p>
     <p>Lavoro direttamente nella cucina della villa, gestendo la spesa quotidiana nei mercati e nei fornitori locali quando possibile — un valore aggiunto soprattutto per soggiorni in zone con una forte tradizione gastronomica. Il servizio può includere anche la gestione della tavola, dall'apparecchiatura al riordino, cosa che lascia il gruppo libero di vivere la giornata senza pensare a cosa cucinare.</p>
 
-    <h2 class="font-display text-2xl text-ink pt-4">Per chi è pensata</h2>
+    <h2 class="font-display text-2xl text-ink pt-4">Per chi è pensato il servizio di chef in villa</h2>
     <p>È un servizio particolarmente richiesto per soggiorni tra amici o famiglie numerose, viaggi di più generazioni in cui coordinare i pasti diventa complicato, o per chi affitta una villa proprio per l'esperienza di vivere una vacanza senza compromessi, cucina inclusa. Per numeri di ospiti più contenuti e una sola serata, la pagina <a href="cena-privata.html" class="link-underline pb-0.5 text-ink">Cena Privata</a> potrebbe essere il punto di partenza più naturale.</p>
 
-    <h2 class="font-display text-2xl text-ink pt-4">Cosa è incluso</h2>
+    <h2 class="font-display text-2xl text-ink pt-4">Cosa è incluso nel servizio di chef in villa</h2>
     <ul class="space-y-2 list-none">
       <li class="flex gap-3"><span class="text-gold-deep">—</span> Pianificazione dei pasti prima dell'arrivo</li>
       <li class="flex gap-3"><span class="text-gold-deep">—</span> Spesa quotidiana, con attenzione ai mercati e fornitori locali</li>
@@ -126,15 +188,15 @@
     <p class="eyebrow text-xs uppercase text-gold-deep mb-4 reveal">Altre esperienze</p>
     <div class="grid sm:grid-cols-3 gap-8">
       <a href="cena-privata.html" class="group reveal block">
-        <div class="aspect-[4/3] mb-4 rounded-sm overflow-hidden"><img src="../assets/img/esperienza-cena-privata.png" alt="Tavola apparecchiata per una cena privata in villa, sera" class="w-full h-full object-cover" /></div>
+        <div class="aspect-[4/3] mb-4 rounded-sm overflow-hidden"><img src="../assets/img/esperienza-cena-privata.webp" width="1535" height="1024" decoding="async" loading="lazy" alt="Tavola apparecchiata per una cena privata in villa, sera" class="w-full h-full object-cover" /></div>
         <h3 class="font-display text-lg group-hover:text-gold-deep transition-colors duration-300">Cena Privata</h3>
       </a>
       <a href="eventi-aziendali.html" class="group reveal block">
-        <div class="aspect-[4/3] mb-4 rounded-sm overflow-hidden"><img src="../assets/img/esperienza-eventi-aziendali.webp" alt="Selezione di finger food e stuzzichini per un evento aziendale" class="w-full h-full object-cover" /></div>
+        <div class="aspect-[4/3] mb-4 rounded-sm overflow-hidden"><img src="../assets/img/esperienza-eventi-aziendali.webp" width="2480" height="1120" decoding="async" loading="lazy" alt="Selezione di finger food e stuzzichini per un evento aziendale" class="w-full h-full object-cover" /></div>
         <h3 class="font-display text-lg group-hover:text-gold-deep transition-colors duration-300">Eventi Aziendali</h3>
       </a>
       <a href="compleanni.html" class="group reveal block">
-        <div class="aspect-[4/3] mb-4 rounded-sm overflow-hidden"><img src="../assets/img/esperienza-compleanni.webp" alt="Amici che brindano insieme a una lunga tavolata imbandita" class="w-full h-full object-cover" /></div>
+        <div class="aspect-[4/3] mb-4 rounded-sm overflow-hidden"><img src="../assets/img/esperienza-compleanni.webp" width="1500" height="1992" decoding="async" loading="lazy" alt="Amici che brindano insieme a una lunga tavolata imbandita" class="w-full h-full object-cover" /></div>
         <h3 class="font-display text-lg group-hover:text-gold-deep transition-colors duration-300">Compleanni</h3>
       </a>
     </div>
@@ -150,7 +212,7 @@
       <a href="../index.html#chi-sono" class="link-underline pb-1">Chi sono</a>
       <a href="../index.html#esperienze" class="link-underline pb-1">Esperienze</a>
       <a href="../index.html#galleria" class="link-underline pb-1">Galleria</a>
-      <a href="../index.html#testimonianze" class="link-underline pb-1">Testimonianze</a>
+      <a href="../index.html#come-funziona" class="link-underline pb-1">Come funziona</a>
       <a href="../index.html#prenotazione" class="link-underline pb-1">Prenotazione</a>
     </nav>
     <div class="flex items-center gap-4">
@@ -162,7 +224,8 @@
       </a>
     </div>
   </div>
-  <p class="text-center text-xs text-ink/40 mt-8">© 2026 Chef Yuri. Tutti i diritti riservati.</p>
+  <p class="text-center text-xs text-ink/40 mt-2">Servizio attivo per ville in Toscana e Umbria, disponibile anche nel Lazio.</p>
+  <p class="text-center text-xs text-ink/40 mt-2">© 2026 Chef Yuri. Tutti i diritti riservati.</p>
 </footer>
 
 <!-- TODO: sostituire con il numero WhatsApp business reale prima del lancio -->
